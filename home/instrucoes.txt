@@ -1,0 +1,2 @@
+1. **Home:**
+   - A página inicial deve conter uma introdução sobre nossa empresa, produtos em destaque, categorias de produtos e um call-to-action (CTA) para incentivar os visitantes a explorar os produtos.
