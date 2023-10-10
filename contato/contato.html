@@ -1,68 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Atendimento ao Cliente</title>
+    <!-- Aqui vou incluir o CSS e outros arquivos de estilo -->
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <!-- Barra de navegação destacada -->
-        <nav class="destacado header">
-            <span>
-                <!-- Lista de navegação -->
-                <ul class="navigation">
-                    <!-- Item do logotipo -->
-                    <li><a href="#">Logo</a></li>
-                    
-                    <!-- Campo de pesquisa -->
-                    <li class="search">
-                        <input type="text" placeholder="Barra de pesquisa">
-                    </li>
-                    
-                    <!-- Ícone do usuário -->
-                    <li class="login-cart">
-                        <a href="#"><img src="img/icons/usuario.png" alt="Usuário"></a>
-                        <a href="#">Cadastre-se</a> ou <a href="#">Faça login</a>
-                        <a href="#"><img src="img/icons/carrinho.png" alt="Carrinho"></a>
-                    </li>
-                </ul>
-            </span>
-        </nav>
-    </header>
 
-    <!-- Conteúdo principal -->
-    <main>
-        
-    </main>
+<header>
+    <nav class="destacado header">
+        <ul class="navigation">
+            <li><a href="index.html">NutriFit</a></li>
+            <li class="search">
+                <input type="text" placeholder="Barra de pesquisa">
+            </li>
+            <li class="login-cart">
+                <a href="#"><img src="img/icons/usuario.png" alt="Usuário" width="32" height="32"></a>
+                <a href="cadastro.html">Cadastre-se</a> ou <a href="#">Faça login</a>
+                <a href="#"><img src="img/icons/carrinho.png" alt="Carrinho" width="32" height="32"></a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Rodapé -->
-    <footer>
+<div class="container">
+    <section>
         <nav>
-            <!-- Conteúdo do rodapé -->
+            <ul>
+                <li>
+                    <img src="img/icons/frete.png" alt="Ícone de Frete">
+                    <h1>Frete Grátis</h1>
+                    <p>Acima de 100,00R$</p>
+                </li>
+                <li>
+                    <img src="img/icons/pix.png" alt="Pix">
+                    <h1>5% Off</h1>
+                </li>
+            </ul>
         </nav>
-        <span>
-            <!-- Informações de contato -->
-            <div class="footer-contact">
-                <p>Atendimento <a href="tel:(xx)xxxx-xxxx">(xx) xxxx-xxxx</a></p>
-                <p>Email <a href="mailto:email@exemplo.com">email@exemplo.com</a></p>
-            </div>
-            
-            <!-- Atalhos no rodapé -->
-            <div class="footer-shortcuts">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Fale conosco</a></li>
-                </ul>
-            </div>
-            
-            <!-- Ícones de mídia social no rodapé -->
-            <div class="footer-social-icons">
-                <a href="#"><img src="img/icons/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="img/icons/instagram.png" alt="Instagram"></a>
-            </div>
-        </span>
-    </footer>
+    </section>
+    <section>
+        <nav>
+            <ul>
+                <li>
+                    <img src="img/icons/seguro.png" alt="Site Seguro">
+                    <h1>Site Seguro</h1>
+                </li>
+                <li>
+                    <img src="img/icons/duvidas.png" alt="Dúvidas">
+                    <h1>Dúvidas?</h1>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</div>
+
+<h1>COMO PODEMOS TE AJUDAR?</h1>
+
+<section id="opcoes">
+    <div>
+        <img src="path/para/icone/telefone.png" alt="Ícone telefone">
+        <h2>TELEFONE</h2>
+        <p>De seg a sex das 9hs às 18hs</p>
+        <p>(99) 99999-9999</p>
+    </div>
+    <div>
+        <img src="path/para/icone/revenda.png" alt="Ícone revenda">
+        <h2>REVENDA</h2>
+        <p>Tem uma loja e quer revender nossos produtos?</p>
+    </div>
+    <div>
+        <img src="path/para/icone/forneca.png" alt="Ícone fornecer">
+        <h2>FORNEÇA</h2>
+        <p>Forneça produtos para nós</p>
+    </div>
+</section>
+
+<section id="contato">
+    <h2>Fale conosco!</h2>
+    <p>Olá! Preencha o formulário e retornaremos seu email!</p>
+    <form>
+        <input type="text" name="nome" placeholder="Nome Completo">
+        <input type="text" name="cpf" placeholder="CPF">
+        <input type="email" name="email" placeholder="E-mail">
+        <input type="tel" name="telefone" placeholder="Telefone">
+        <textarea name="mensagem" placeholder="Mensagem"></textarea>
+        <button type="submit">ENVIAR</button>
+    </form>
+</section>
+
+<footer>
+    <nav>
+        <!-- Conteúdo do rodapé -->
+    </nav>
+    <span>
+        <div class="footer-contact">
+            <p>Atendimento <a href="tel:(xx)xxxx-xxxx">(xx) xxxx-xxxx</a></p>
+            <p>Email <a href="mailto:email@exemplo.com">email@exemplo.com</a></p>
+        </div>
+        
+        <div class="footer-shortcuts">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contato.html">Fale conosco</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-social-icons">
+            <a href="#"><img src="img/icons/facebook-logo.png" alt="Facebook" width="32" height="32"></a>
+            <a href="#"><img src="img/icons/instagram.png" alt="Instagram" width="32" height="32"></a>
+        </div>
+    </span>
+</footer>
+
 </body>
 </html>
