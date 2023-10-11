@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NutriFit - Sua loja de Suplementos</title>
+    <link rel="stylesheet" href="cs/index.css"> <!-- Certifique-se de incluir o caminho correto para o seu arquivo de estilo -->
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
-        <!-- Barra de navegação destacada -->
         <nav class="destacado header">
-            <span>
-                <!-- Lista de navegação -->
-                <ul class="navigation">
-                    <!-- Item do logotipo -->
-                    <li><a href="#">Logo</a></li>
-                    
-                    <!-- Campo de pesquisa -->
-                    <li class="search">
-                        <input type="text" placeholder="Barra de pesquisa">
-                    </li>
-                    
-                    <!-- Ícone do usuário -->
-                    <li class="login-cart">
-                        <a href="#"><img src="img/icons/usuario.png" alt="Usuário"></a>
-                        <a href="#">Cadastre-se</a> ou <a href="#">Faça login</a>
-                        <a href="#"><img src="img/icons/carrinho.png" alt="Carrinho"></a>
-                    </li>
-                </ul>
-            </span>
+            <ul class="navigation">
+                <li><a href="index.html">NutriFit</a></li>
+                <li class="search">
+                    <input type="text" placeholder="Barra de pesquisa">
+                </li>
+                <li class="login-cart">
+                    <a href="#"><img src="img/icon/usuario.png" alt="Usuário" width="32" height="32"></a>
+                    <a href="cadastro.html">Cadastre-se</a> ou <a href="#">Faça login</a>
+                    <a href="#"><img src="./img/icon/carrinho.png" alt="Carrinho" width="32" height="32"></a>
+                </li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo principal -->
     <main>
+    <div class="container">
+        <section>
+            <nav>
+                <ul>
+                    <li>
+                        <img src="img/icon/frete-free.png" alt="Ícone de Frete" width="64" height="64">
+                        <h1>Frete Grátis</h1>
+                        <p>Acima de 100,00R$</p>
+                    </li>
+                    <li>
+                        <img src="img/icon/pix.png" alt="Pix" width="64" height="64">
+                        <h1>5% Off</h1>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section>
+            <nav>
+                <ul>
+                    <li>
+                        <img src="img/icon/seguro.png" alt="Site Seguro" width="64" height="64">
+                        <h1>Site Seguro</h1>
+                    </li>
+                    <li>
+                        <img src="img/icon/contato.png" alt="Dúvidas" width="64" height="64">
+                        <h1>Dúvidas?</h1>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </div>
         <h1>Cadastro</h1>
 
         <form action="">
