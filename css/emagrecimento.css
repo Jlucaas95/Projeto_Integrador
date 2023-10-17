@@ -1,0 +1,154 @@
+/* Estilos globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Fonte global */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #58378C;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo,
+.search-bar,
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.header-button {
+    background-color: #2E97A7;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 30px;
+}
+
+.header-button:hover {
+    background-color: #1F6A75;
+    cursor: pointer;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0 20px;
+}
+
+.user-options a,
+.user-options span {
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilos da seção principal */
+main {
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.balloon-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.balloon {
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    padding: 15px;
+    width: 150px;
+    margin: 20px;
+    text-align: center;
+}
+
+.balloon h1 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.balloon p {
+    margin: 5px 0;
+}
+
+.balloon img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos das seções */
+section {
+    margin-bottom: 2rem;
+}
+
+section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+section ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: #58378C;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-contact,
+.footer-shortcuts,
+.footer-social-icons {
+    flex: 1;
+}
+
+.footer-contact p,
+.footer-shortcuts ul,
+.footer-social-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact a,
+.footer-shortcuts a {
+    text-decoration: none;
+    color: #95d1e3;
+}
+
+.footer-social-icons img {
+    margin: 0 5px;
+}
