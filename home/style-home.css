@@ -1,0 +1,60 @@
+main {
+    font-family: Century Gothic;
+}
+
+.container-objetivo {
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.h2-objetivo {
+    text-align: center;
+    font-size: 25px;
+}
+.button-massa-muscular {
+    margin-right: 10px;
+    padding: 15px;
+}
+
+.button-emagrecimento {
+    padding: 15px;
+}
+
+.img-massa {
+    background-color: #14AFE0;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.img-emagrecimento {
+    background-color: #14AFE0;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container-produto {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.img-prod {
+    align-self: center;
+    border: 2px solid black;
+}
+
+.dados-prod {
+    border: 2px solid black;
+}
+
+.titulo-prod {
+    text-align: center;
+}
