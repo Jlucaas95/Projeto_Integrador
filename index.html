@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriFit - Sua loja de Suplementos</title>
     <link rel="stylesheet" href="/home/style-home.css">
+    <link rel="stylesheet" href="css/emagrecimento.css">
     <!-- Certifique-se de incluir o caminho correto para o seu arquivo de estilo -->
 </head>
 
@@ -58,27 +59,28 @@
                 </nav>
             </section>
         </div>
-        <h2 class="h2-objetivo">Qual é o seu objetivo?</h2>
+        <div class="titulo-objetivo">
+            <h2 >Qual é o seu objetivo?</h2>
+        </div>
         <div class="container-objetivo">
             <div class="button-massa-muscular">
-                <img src="/img/icon/biceps-of-a-man-svgrepo-com.svg" alt="Massa Muscular" class="img-massa">
+                <div class="div-massa"><img src="/img/icon/biceps-of-a-man-svgrepo-com.png" alt="Massa Muscular" class="img-massa"></div>
                 <h3><a href="ganhoMuscular.html">Massa muscular</a></h3>
             </div>
             <div class="button-emagrecimento">
-                <img src="/img/icon/measuring-tape-fitness-svgrepo-com.svg" alt="Emagrecimento"
-                    class='img-emagrecimento'>
+                <div class="div-emagrecimento"><img src="/img/icon/measuring-tape-svgrepo-com.svg" alt="Emagrecimento" class='img-emagrecimento'></div>
                 <h3><a href="emagrecimento.html">Emagrecimento</a></h3>
             </div>
         </div>
 
         <div class="container-produto">
             <div class="img-prod">
-                <img src="/img/produtos/whey-gold-standard.png" width="350px" height="350px" alt="Produto">
+                <img src="/img/produtos/whey-gold-standard.png" width="320px" height="320px" alt="Produto">
             </div>
             <div class="dados-prod">
-                <h3 class="titulo-prod">O WHEY COM MELHOR <p>CUSTO BENEFÍCIO DO MERCADO.</p>   
-                <ul>
-                    <h4>WHEY GOLD STANDARD 1KG</h4>
+                <h3 class="cta-prod">O WHEY COM MELHOR CUSTO BENEFÍCIO DO MERCADO.</h3>
+                <h4 class="titulo-prod">WHEY GOLD STANDARD 1KG</h4>
+                <ul class="beneficios-prod">
                     <li>
                         Promoção por tempo limitado
                     </li>
@@ -89,42 +91,81 @@
                         Ajuda na hipertrofia
                     </li>
                 </ul>
-                </h3>
-                <div class="preco-produto">
-                    <h3>De R$199,90</h3>
-                    <h3>Por R$99,90</h3>
+                
+                <div class="container-preco">
+                    <b>De <label class="desconto">R$199,90</label></b>
+                    <b><label class="preco-produto">Por R$99,90</label></b>
                 </div>
-                <div class="botao-saiba-mais">
-                    <h3>SAIBA MAIS</h3>
-                </div>
+                <a href="/ganhoMuscular.html" class="botao-saiba-mais">Saiba mais</a>
             </div>
         </div>
-
-        <div class="container-avaliacoes">
+        <div class="titulo-avaliacoes">
             <h2>Vejam o que falam de nossa loja</h2>
-            <a href="">Adicionar Comentário</a>
-            <div class="area-avaliacao">
-                <h3>Comentário</h3>
-                <div class="dados-avaliacao">
-                    <p>
-                        <b>Nome</b>
-                    </p>
-                    <b>Data</b>
-                    <div class="estrelas">
-                        <img src="" alt="estrelas">
-                    </div>
-                </div>
-            </div>
         </div>
+        <section class="cards">
 
-        <div class="sobre-nos">
-            <h2>Sobre nós</h2>
-            <img src="" alt="Logo">
-            <div class="texto-sobre-nos">
+            <div class="card">
+
+                <p>Recomendo.</p> 
+                <h3>Marcelo H.</h3>
+                
+                <div class="stars">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                </div>
+
+               
+            </div>
+
+            <div class="card">
+                
+                <p>Site excelente.</p>
+                <h3>Diego M.</h3>
+                
+                <div class="stars">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                </div>
+
+                
+            </div>
+
+            <div class="card">
+
+                <p>Ótimo.</p> 
+                <h3>João L.</h3> 
+                <div class="stars">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                    <img class="star" src="img/icon/star-svgrepo-com.svg" alt="">
+                </div>
+
+               
+            </div>
+
+        </section>
+        <div class="titulo-sobre-nos">
+            <h2 >Sobre nós</h2>
+        </div>
+        <div class="container-sobre-nos">
+            <div class="img-logo">
+                <img src="img/produtos/logo_ficticio.png" alt="Logo" height="300px" width="300px">
+            </div>
+            
+            <div class="container-texto-sobre-nos">
                 <h3>Nossa missão</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At, corrupti laboriosam! Ullam perspiciatis
-                ipsa magni! Maiores, eaque consectetur? Quisquam numquam totam aliquam, quis odit eveniet nulla ullam
-                repudiandae enim odio.
+                <div class="texto">
+                Somos uma empresa fictícia que acredita que a saúde é a maior riqueza que podemos possuir na vida. 
+                <p>Com um compromisso inabalável com a qualidade e a eficácia, estamos aqui para ajudá-lo a atingir os seus objetivos de saúde e fitness de forma segura e eficiente.</p>
+                </div>
             </div>
         </div>
 
