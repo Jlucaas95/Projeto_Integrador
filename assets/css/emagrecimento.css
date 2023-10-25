@@ -4,6 +4,7 @@ body {
     /* Fonte global */
     margin: 0;
     padding: 0;
+    font-size: 18px;
 }
 
 /* Estilos do cabeçalho */
@@ -28,7 +29,7 @@ header {
     color: white;
     border: none;
     padding: 8px 20px;
-    border-radius: 8px;
+    border-radius: 21px;
     font-size: 30px;
 }
 
@@ -39,40 +40,63 @@ header {
 
 .search-bar input[type="text"] {
     flex: 1;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 11px;
+    border-radius: 20px;
     margin: 0 20px;
 }
 
 .user-options a,
-.user-options span {
+.user-options span,
+.user-link {
     text-decoration: none;
     color: white;
+    display: block;
+    /* Isso fará com que os links sejam exibidos verticalmente um abaixo do outro */
+    margin-bottom: 10px;
+    /* Adiciona um espaçamento entre os links */
 }
 
 /* Estilos da seção principal */
 main {
+    display: block;
     padding: 2rem;
+    font-size: 11px;
 }
-
+.div-emagrecimento {
+    display: flex;
+    height: 175px;
+    width: 175px;
+    border-radius: 50%;
+    background-color: #58378C;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 .container {
     display: flex;
     justify-content: center;
+    font-size: 18px;
 }
 
 .balloon-box {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-around;
+    flex-direction: row;
+    align-content: space-around;
+    width: 50rem;
+    height: 12rem
 }
 
 .balloon {
     border: 2px solid #ddd;
-    border-radius: 20px;
-    padding: 15px;
+    border-radius: 66px;
+    padding: 11px;
     width: 150px;
-    margin: 20px;
+    margin: 7px;
     text-align: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
 .balloon h1 {
@@ -94,27 +118,66 @@ section {
     margin-bottom: 2rem;
 }
 
-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.container-produto {
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    display: flex;
+    align-items: center;
+    width: 850px;
+    margin: auto;
+    padding: 20px;
 }
 
-section p {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+.img-prod {
+    padding: 10px;
 }
 
-section ul {
-    list-style: none;
-    margin-top: 1rem;
+.img-prod img {
+    width: 200px;
+    height: 200px;
 }
 
-section table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
+.cta-prod {
+    margin-left: 20px;
 }
+
+.titulo-prod {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.dados-prod {
+    margin-bottom: 10px;
+}
+
+.beneficios-prod {
+    margin-bottom: 10px;
+}
+
+.beneficios-prod p {
+    margin: 5px 0;
+}
+
+.preco-produto {
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+}
+
+.desconto {
+    text-decoration: line-through;
+}
+
+.botao-saiba-mais {
+    display: inline-block;
+    background-color: #58378C;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+
 
 /* Estilos do rodapé */
 footer {
