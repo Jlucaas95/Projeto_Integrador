@@ -4,7 +4,9 @@ body {
     /* Fonte global */
     margin: 0;
     padding: 0;
-    font-size: 18px;
+    font-size: 14px;
+    display: inline;
+    width: 850px;
 }
 
 /* Estilos do cabeçalho */
@@ -62,20 +64,12 @@ main {
     padding: 2rem;
     font-size: 11px;
 }
-.div-emagrecimento {
-    display: flex;
-    height: 175px;
-    width: 175px;
-    border-radius: 50%;
-    background-color: #58378C;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-.container {
+
+#container {
     display: flex;
     justify-content: center;
     font-size: 18px;
+    width: 708px;
 }
 
 .balloon-box {
@@ -113,18 +107,41 @@ main {
     margin: 0 auto;
 }
 
-/* Estilos das seções */
-section {
-    margin-bottom: 2rem;
+
+#emagrecimento {
+    position: relative;
+    background-color: #58378C;
+    color: #ffffff;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    text-align: center;
+    border-radius: 10px;
 }
 
-.container-produto {
+.div-emagrecimento {
+    margin-bottom: 20px;
+}
+
+.img-emagrecimento {
+    width: 100px;
+    /* Defina o tamanho desejado */
+    height: 100px;
+    /* Defina o tamanho desejado */
+}
+
+.titulo-prod {
+    font-size: 24px;
+    /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+#container-produto {
     border: 2px solid rgba(0, 0, 0, 0.432);
     display: flex;
-    align-items: center;
-    width: 850px;
     margin: auto;
-    padding: 20px;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 720px;
+    flex-direction: row;
 }
 
 .img-prod {
@@ -132,8 +149,8 @@ section {
 }
 
 .img-prod img {
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 225px;
 }
 
 .cta-prod {
@@ -167,7 +184,7 @@ section {
     text-decoration: line-through;
 }
 
-.botao-saiba-mais {
+.comprar {
     display: inline-block;
     background-color: #58378C;
     color: #fff;
@@ -177,6 +194,36 @@ section {
     margin-top: 20px;
 }
 
+#cards {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 6px;
+    
+}
+
+.card {
+    color: #58378C;
+    padding: 20px;
+    margin: 0 10px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    border-radius: 5px;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+.card button {
+    display: inline-block;
+    background-color: #58378C;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
 
 
 /* Estilos do rodapé */
