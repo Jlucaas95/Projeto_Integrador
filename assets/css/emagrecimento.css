@@ -1,14 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
 
-/* Estilos globais */
-body {
-    font-family: 'Roboto', sans-serif;
-    /* Fonte global */
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
+/* Importa o arquivo reset.css para redefinir estilos padrão */
+@import url('reset.css');
+
+/* Estilos para as seções principais */
+main {
+    padding: 20px; /* Adiciona preenchimento interno à seção principal */
 }
 
+/* Estilos para o subtítulo */
+h2 {
+    font-size: 2rem; /* Define o tamanho da fonte para o subtítulo */
+    color: #33A8DB; /* Define a cor do texto para o subtítulo */
+    font-weight: bold; /* Define a espessura da fonte como negrito */
+    letter-spacing: 4px; /* Define o espaçamento entre caracteres */
+    text-transform: uppercase; /* Transforma o texto em letras maiúsculas */
+    margin-bottom: 24px; /* Adiciona espaço abaixo do subtítulo */
+}
+
+
+
+/* Estilos para a seção principal */
+section {
+    margin: 100px auto; /* Define as margens superior e inferior e centraliza a seção horizontalmente */
+}
 /* Estilos para desktop */
 @media screen and (min-width: 600px) {
     body {
