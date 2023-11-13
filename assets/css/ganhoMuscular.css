@@ -135,7 +135,7 @@ main {
 }
 
 /* Estilos da seção emagrecimento */
-#emagrecimento {
+#massa-muscular {
     position: relative;
     background-color: #58378C;
     color: #ffffff;
@@ -149,12 +149,12 @@ main {
 }
 
 /* Estilos do contêiner da imagem de emagrecimento */
-.div-emagrecimento {
+.div-massa-muscular {
     margin-bottom: 20px;
 }
 
 /* Estilos da imagem de emagrecimento */
-.img-emagrecimento {
+.img-massa-muscular {
     width: 100px;
     height: 100px;
 }
@@ -182,7 +182,7 @@ main {
 }
 
 .img-prod img {
-    width: 125px;
+    width: 225px;
     height: 225px;
 }
 
@@ -242,7 +242,7 @@ main {
 /* Utilize um nome mais descritivo para a seção de cards de dicas */
 #tips-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 20px; /* Adicione um espaçamento superior para separar da seção anterior, ajuste conforme necessário */
 }
 
@@ -302,7 +302,7 @@ main {
 
 
 /* Estilos da seção dicas */
-#dicas-perda-peso {
+#dicas-ganho-massa {
     text-align: center;
     padding: 20px;
 }
@@ -322,7 +322,7 @@ main {
 }
 
 /* Estilos do título da seção */
-#dicas-perda-peso h2 {
+#dicas-ganho-massa h2 {
     font-size: 24px;
     color: #58378C;
 }
@@ -367,101 +367,41 @@ a {
 
 
 /* Estilos da tabela Nutricional */
-#tabela-nutricao {
+#tabela-nutricional {
     margin: 20px;
 }
 
-#tabela-nutricao h2 {
+#tabela-nutricional h2 {
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-#tabela-nutricao table {
+#tabela-nutricional table {
     width: 100%;
     border-collapse: collapse;
 }
 
-#tabela-nutricao table tr {
+#tabela-nutricional table tr {
     border-bottom: 1px solid #ddd;
 }
 
-#tabela-nutricao table td {
+#tabela-nutricional table td {
     padding: 10px;
     text-align: left;
 }
 
-#tabela-nutricao table tr:nth-child(even) {
+#tabela-nutricional table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-#tabela-nutricao table tr:nth-child(1) {
+#tabela-nutricional table tr:nth-child(1) {
     font-weight: bold;
 }
 
-#tabela-nutricao table tr td:nth-child(2),
-#tabela-nutricao table tr td:nth-child(3),
-#tabela-nutricao table tr td:nth-child(4) {
+#tabela-nutricional table tr td:nth-child(2) {
     text-align: center;
 }
-
-#tabela-nutricao table button {
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-#tabela-nutricao table button:hover {
-    background-color: #45a049;
-}
-
-/* Comentário: Adicionei transição suave para o botão.
-   Centralizei o texto nas colunas 2, 3 e 4.
-   Mantive a paleta de cores consistente. */
-
-
-/* Estilos da seção ingredientes */
-#ingredientes {
-    margin: 20px;
-}
-
-#ingredientes h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-#ingredientes p {
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-#ingredientes button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-#ingredientes button:hover {
-    background-color: #45a049;
-}
-
-/* Comentário: Adicionei uma transição suave para o botão.
-   Mantive a paleta de cores consistente. */
 
 
 /* Estilos do rodapé */

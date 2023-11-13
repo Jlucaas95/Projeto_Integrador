@@ -1,146 +1,287 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NutriFit - Sua loja de Suplementos</title>
-    <link rel="stylesheet" href="cs/index.css"> <!-- Certifique-se de incluir o caminho correto para o seu arquivo de estilo -->
-</head>
-<body>
+
+    <link rel="stylesheet" href="/assets/css/ganhoMuscular.css" />
+    <!-- Certifique-se de incluir o caminho correto para o seu arquivo de estilo -->
+  </head>
+
+  <body>
     <header>
-        <nav class="destacado header">
-            <ul class="navigation">
-                <li><a href="index.html">NutriFit</a></li>
-                <li class="search">
-                    <input type="text" placeholder="Barra de pesquisa">
-                </li>
-                <li class="login-cart">
-                    <a href="#"><img src="img/icon/usuario.png" alt="Usuário" width="32" height="32"></a>
-                    <a href="cadastro.html">Cadastre-se</a> ou <a href="#">Faça login</a>
-                    <a href="#"><img src="./img/icon/carrinho.png" alt="Carrinho" width="32" height="32"></a>
-                </li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <a href="index.html" class="logo-link"
+          ><button class="header-button">NutriFit</button></a
+        >
+      </div>
+
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Barra de pesquisa"
+          style="flex: 1; margin: 0 20px"
+        />
+      </div>
+      <div class="user-options">
+        <a href="#"
+          ><img
+            src="img/icon/usuario.png"
+            alt="Usuário"
+            width="32"
+            height="32"
+            style="margin-right: 10px"
+        /></a>
+        <a
+          href="cadastro.html"
+          style="text-decoration: none; color: white; display: block"
+          >Cadastre-se</a
+        >
+        <a href="#" style="text-decoration: none; color: white; display: block"
+          >Faça login</a
+        >
+        <a href="#"
+          ><img
+            src="./img/icon/carrinho.png"
+            alt="Carrinho"
+            width="32"
+            height="32"
+        /></a>
+      </div>
     </header>
 
     <main>
-    <div class="container">
-        <section>
-            <nav>
-                <ul>
-                    <li>
-                        <img src="img/icon/frete-free.png" alt="Ícone de Frete" width="64" height="64">
-                        <h1>Frete Grátis</h1>
-                        <p>Acima de 100,00R$</p>
-                    </li>
-                    <li>
-                        <img src="img/icon/pix.png" alt="Pix" width="64" height="64">
-                        <h1>5% Off</h1>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-        <section>
-            <nav>
-                <ul>
-                    <li>
-                        <img src="img/icon/seguro.png" alt="Site Seguro" width="64" height="64">
-                        <h1>Site Seguro</h1>
-                    </li>
-                    <li>
-                        <img src="img/icon/contato.png" alt="Dúvidas" width="64" height="64">
-                        <h1>Dúvidas?</h1>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-    </div>
+      <div id="container">
+        <div class="balloon-box">
+          <div class="balloon">
+            <img
+              src="img/icon/frete-free.png"
+              alt="Ícone de Frete"
+              width="64"
+              height="64"
+            />
+            <h1>Frete Grátis</h1>
+            <p>Acima de 100,00R$</p>
+          </div>
+          <div class="balloon">
+            <img src="img/icon/pix.png" alt="Pix" width="64" height="64" />
+            <h1>5% Off</h1>
+          </div>
+          <div class="balloon">
+            <img
+              src="img/icon/seguro.png"
+              alt="Site Seguro"
+              width="64"
+              height="64"
+            />
+            <h1>Site Seguro</h1>
+          </div>
+          <div class="balloon">
+            <img
+              src="img/icon/contato.png"
+              alt="Dúvidas"
+              width="64"
+              height="64"
+            />
+            <h1>Dúvidas?</h1>
+          </div>
+        </div>
+      </div>
 
-        <h2>WHEY PROTEIN CONCENTRADO</h2>
-    <img src="caminho_para_a_imagem_do_icon.png" alt="Ícone do Whey Concentrado™">
-    <p>Atendimento</p>
-    <a href="mailto:email@exemplo.com.br">email@exemplo.com.br</a>
-    </section>
+      <div id="massa-muscular">
+        <div class="div-massa-muscular">
+          <img
+            src="/img/icon/biceps-of-a-man-svgrepo-com.png"
+            alt="massa-muscular"
+            class="img-massa-muscular"
+          />
+        </div>
+        <h1 class="titulo-prod">CONHEÇA NOSSO WHEY PROTEIN 100% CONCENTRADO</h1>
+      </div>
 
-    <section>
-        <h2>Quais são os beneficios do Whey?</h2>
-        <p>Auxilia no aumento do volume de massa magra.</p>
-        <p>Potencializa a recuperação do tecido muscular </p>
-        <p>Combate a inflamação local das fibras</p>
-        <p>Saiba mais</p>
-    <section>
-        <h2>Whey Concentrado</h2>
-        <p>EM ESTOQUE. ENVIO IMEDIATO</p>
-        <p></p>
-    </section>
-    <section>
-        <h2>Dicas para ganho de massa muscular</h2>
-        <p>Conhecer</p>
-    </section>
-    <section>
-        <h2>Como consumir?</h2>
-    </section>
-    <section>
-        <h2>Atalhos</h2>
-        <ul>
-            <li>Home</li>
-        </ul>
-    </section>
-    <section>
-        <p>De R$ 159,90</p>
-        <p>Por R$ 100,00</p>
-        <p>Saiba mais</p>
-    </section>
-    <section>
+      <!-- Seção do Produto -->
+      <section id="container-produto" class="product-section">
+        <!-- Imagem do Produto -->
+        <div class="img-prod">
+          <img
+            src="/img/produtos/whey-gold-standard.png"
+            alt="whey-gold-standard"
+          />
+        </div>
+
+        <!-- Informações do Produto -->
+        <div class="cta-prod">
+          <!-- Título do Produto -->
+          <div class="dados-prod">
+            <h2>WHEY GOLD STANDAR</h2>
+          </div>
+
+          <!-- Descrição e Benefícios do Produto -->
+          <div class="beneficios-prod">
+            <h4>WHEY com melhor CUSTO BENEFÍCIO do MERCADO</h4>
+            <p><strong>EM ESTOQUE. ENVIO IMEDIATO! TAMANHO: 1KG - SABOR: CHOCOLATE</strong></p>
+            <ul>
+              <li>RICO EM AMINOÁCIDOS</li>
+              <li>COMBATE A INFLAMAÇÃO MUSCULAR</li>
+              <li>PREVINE CATABOLISMO WH 5!</li>
+              <li>AUXILIA MUSCULAR A REGENERAÇÃO</li>
+            </ul>
+          </div>
+
+          <!-- Preço do Produto -->
+          <div class="preco-produto">
+            <p class="desconto">De R$ 159,90</p>
+            <p>Promoção: Por R$ 100,00</p>
+          </div>
+
+          <a href="#" class="comprar" type="button">Comprar</a>
+        </div>
+      </section>
+
+      <section id="tips-section">
+        <div class="tips-card">
+          <p>O que é Whey Protein?</p>
+          <button type="button" class="buy-button">
+            <a
+              href="https://www.google.com/search?q=O+que+%C3%A9+Whey+Protein%3F&client=avast-a-3&sca_esv=582023809&sxsrf=AM9HkKlWwOaKyAsgLe7OR5EwV5OjIPCMQg%3A1699908447123&ei=X4tSZaaEB9vn1sQPo4iZ8Aw&ved=0ahUKEwjmr5C57MGCAxXbs5UCHSNEBs4Q4dUDCBA&uact=5&oq=O+que+%C3%A9+Whey+Protein%3F&gs_lp=Egxnd3Mtd2l6LXNlcnAiFk8gcXVlIMOpIFdoZXkgUHJvdGVpbj8yBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESN8iUMUSWMUScAJ4AZABAJgBzgGgAc4BqgEDMi0xuAEDyAEA-AEB-AECqAIUwgIHECMY6gIYJ8ICFhAAGAMYjwEY5QIY6gIYtAIYjAPYAQHCAhYQLhgDGI8BGOUCGOoCGLQCGIwD2AEB4gMEGAAgQYgGAboGBggBEAEYCw&sclient=gws-wiz-serp"
+              target="_blank"
+              >Saiba mais</a
+            >
+          </button>
+        </div>
+        <div class="tips-card">
+          <p>Benefícios do Whey Protein</p>
+          <button type="button" class="buy-button">
+            <a
+              href="https://www.google.com/search?q=Benef%C3%ADcios+do+Whey+Protein&client=avast-a-3&sca_esv=582023809&sxsrf=AM9HkKmyXo4aGH8PXBSYZBTmjYID8oGIUw%3A1699908527286&ei=r4tSZayKEZ7e1sQPo4WbyAc&ved=0ahUKEwjsna3f7MGCAxUer5UCHaPCBnkQ4dUDCBA&uact=5&oq=Benef%C3%ADcios+do+Whey+Protein&gs_lp=Egxnd3Mtd2l6LXNlcnAiG0JlbmVmw61jaW9zIGRvIFdoZXkgUHJvdGVpbjIFEAAYgAQyBxAAGIoFGEMyBxAAGIoFGEMyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESMMjUKcaWKcacAJ4AZABAJgB6wWgAesFqgEDNi0xuAEDyAEA-AEB-AECqAIUwgIHECMYsAMYJ8ICChAAGEcY1gQYsAPCAgcQIxjqAhgnwgIWEAAYAxiPARjlAhjqAhi0AhiMA9gBAeIDBBgAIEGIBgGQBgm6BgYIARABGAs&sclient=gws-wiz-serp"
+              target="_blank"
+              >Saiba mais</a
+            >
+          </button>
+        </div>
+        <div class="tips-card">
+          <p>Como consumir?</p>
+          <button type="button" class="buy-button">
+            <a
+              href="https://www.google.com/search?q=+Whey+Protein+Como+consumir%3F&client=avast-a-3&sca_esv=582023809&sxsrf=AM9HkKnNSsAYkTg2kHT51u_tl_snlPg6Ig%3A1699908584005&ei=54tSZan-PK_c1sQPku-FyAc&ved=0ahUKEwjpjbP67MGCAxUvrpUCHZJ3AXkQ4dUDCBA&uact=5&oq=+Whey+Protein+Como+consumir%3F&gs_lp=Egxnd3Mtd2l6LXNlcnAiHCBXaGV5IFByb3RlaW4gQ29tbyBjb25zdW1pcj8yBhAAGBYYHjIIEAAYFhgeGAoyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSLxaULMIWP0tcAF4AZABAJgBqAKgAYwFqgEFMC4yLjG4AQPIAQD4AQH4AQLCAgoQABhHGNYEGLADwgIKEAAYigUYsAMYQ8ICBRAAGIAEwgIGEAAYBxgewgIEEAAYHsICBhAAGAgYHuIDBBgAIEGIBgGQBgo&sclient=gws-wiz-serp"
+              target="_blank"
+              >Saiba mais</a
+            >
+          </button>
+        </div>
+        <div class="tips-card">
+          <p>Tabela nutricional</p>
+          <button type="button" class="buy-button">
+            <a
+              href="https://www.google.com/search?q=Whey+Protein+Como+Tabela+nutricional%3F&client=avast-a-3&sca_esv=582023809&tbm=isch&sxsrf=AM9HkKmgf0LxigmHG3wNtipdB91DRNevDg:1699908706971&source=lnms&sa=X&ved=2ahUKEwj_oIS17cGCAxXSqpUCHYZtDdAQ_AUoAnoECAEQBA&biw=1300&bih=582&dpr=1#imgrc=t5QSLjC4d-7j7M"
+              target="_blank"
+              >Saiba mais</a
+            >
+          </button>
+        </div>
+      </section>
+
+      <!-- Seção Dicas de Treinos para Ganho Muscular  -->
+      <section id="dicas-ganho-massa">
+        <h2>Dicas de Treinos para Ganho Muscular</h2>
+        <div class="table-container">
+          <div class="row">
+            <div class="column">
+              <h3>Treino ABC - Academia</h3>
+              <p>• Treino A - Pernas (segundas e quintas-feiras)</p>
+              <p>• Treino B- Empurrar (terças e sextasfeiras)</p>
+              <p>• Treino C - Puxar (quartas-feiras e sábados)</p>
+              <a
+                href="https://www.google.com/search?q=treino+iniciante+academia+abc&client=avast-a-3&sca_esv=582023809&sxsrf=AM9HkKnTiJlA8hVMrED5a93APHkLchjIaw%3A1699908375635&ei=F4tSZf6vJvXd1sQP78GPwAs&oq=Treino+ABC+-+Academia&gs_lp=Egxnd3Mtd2l6LXNlcnAiFVRyZWlubyBBQkMgLSBBY2FkZW1pYSoCCAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSIB3UNEgWNEgcAJ4AZABAJgB0gGgAdIBqgEDMi0xuAEByAEA-AEB-AECqAIUwgIHECMY6gIYJ8ICFhAAGAMYjwEY5QIY6gIYtAIYjAPYAQHCAhYQLhgDGI8BGOUCGOoCGLQCGIwD2AEB4gMEGAAgQYgGAboGBggBEAEYCw&sclient=gws-wiz-serp#ip=1"
+                target="_blank"
+                ><button type="button">Conhecer</button></a
+              >
+            </div>
+            <div class="column">
+              <h3>Treino ABCD - Academia</h3>
+              <p>• Treino A - Peito / Costas (segunda)</p>
+              <p>• Treino B- Bíceps / Tríceps + Antebraço (terça)</p>
+              <p>• Treino C - Ombro + Trapézio + Abdômen (quinta)</p>
+              <p>• Treino D - Pernas + Panturrilhas (sexta)</p>
+              <a
+                href="https://www.google.com/search?client=avast-a-3&q=Treino+ABCD+-+Academia&oq=Treino+ABCD+-+Academia&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIECAEQADIECAIQADIECAMQADIECAQQADIECAUQADIECAYQADIECAcQANIBCDgzMTdqMGoxqAIAsAIA&ie=UTF-8"
+                target="_blank"
+                ><button type="button">Conhecer</button></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="tabela-nutricional">
         <h2>Tabela nutricional</h2>
-        <p>Qtd. por porção</p>
-        <p>2Kcal=8kJ</p>
-        <p>30mg</p>
-    </section>
-    <section>
-        <h2>COMPRAR</h2>
-    </section>
-    <section>
-        <h2>Exercícios de musculação e crossfit</h2>
-        <ul>
-            <li>A musculação além de ajudar a emagrecer também favorece o ganho muscular.</li>
-            <li>O crossfit favorece o ganho muscular através de exercícios aeróbicos, diferente da musculação</li>
-        </ul>
-    </section>
-    <section>
-        <p>INGREDIENTES: Cafeína Anidra; Estabilizante: Fosfato de Cálcio, Celulose Microcristalina (INS 4601), Croscarmelose Sódica (INS 468) e Hidroxipropilmetilcelulose (INS 464);</p>
-        <p>Aroma: Blend Aromático (Gengibre em pó, Laranja em pó, Pimenta Cayena e Preta em pó);</p>
-        <p>Antiumectante: Dióxido de Silício (INS 551);</p>
-        <p>Lubrificante: Estearato de Magnésio (INS 470i);</p>
-        <p>Corante: Carbon Black;</p>
-        <p>Veículo: Água Purificada, Álcool Etílico e Polietilenoglicol. NÃO CONTÉM GLÚTEN.</p>
-        <p>% VD(*)</p>
-        <p>Conhecer</p>
-    </section>
+        <table>
+          <tr>
+            <td>Qtd. por porção</td>
+            <td>% VD(*)</td>
+          </tr>
+          <tr>
+            <td>Valor energético</td>
+            <td>122,4kcal = 512KJ</td>
+          </tr>
+          <tr>
+            <td>Carboidratos</td>
+            <td>4g</td>
+          </tr>
+          <tr>
+            <td>Proteínas</td>
+            <td>239g</td>
+          </tr>
+          <tr>
+            <td>Gorduras totais</td>
+            <td>1,69g</td>
+          </tr>
+          <tr>
+            <td>Gorduras saturadas</td>
+            <td>0g</td>
+          </tr>
+          <tr>
+            <td>Gorduras trans</td>
+            <td>0g</td>
+          </tr>
+        </table>
+      </section>
     </main>
 
     <footer>
-        <nav>
-            <!-- Conteúdo do rodapé -->
-        <span>
-            <div class="footer-contact">
-                <p>Atendimento <a href="tel:(xx)xxxx-xxxx">(xx) xxxx-xxxx</a></p>
-                <p>Email <a href="mailto:email@exemplo.com">email@exemplo.com</a></p>
-            </div>
-            
-            <div class="footer-shortcuts">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="contato.html">Fale conosco</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-social-icons">
-                <a href="#"><img src="img/icon/facebook-logo.png" alt="Facebook" width="32" height="32"></a>
-                <a href="#"><img src="img/icon/instagram.png" alt="Instagram" width="32" height="32"></a>
-            </div>
-        </span>
-        </nav>
+      <div class="footer-content">
+        <div class="footer-contact">
+          <p>Atendimento <a href="tel:(xx)xxxx-xxxx">(xx) xxxx-xxxx</a></p>
+          <p>
+            Email <a href="mailto:email@exemplo.com">NutriFit@comercial.com</a>
+          </p>
+        </div>
+
+        <div class="footer-shortcuts">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contato.html">Fale conosco</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social-icons">
+          <a href="https://www.facebook.com/NutriFitOficial" target="_blank"
+            ><img
+              src="img/icon/facebook-logo.png"
+              alt="Facebook"
+              width="32"
+              height="32"
+          /></a>
+          <a href="https://www.instagram.com/nutrifit.oficial/" target="_blank"
+            ><img
+              src="img/icon/instagram.png"
+              alt="Instagram"
+              width="32"
+              height="32"
+          /></a>
+        </div>
+      </div>
+      <p>© 2023 NutriFit</p>
     </footer>
-</body>
+  </body>
 </html>
