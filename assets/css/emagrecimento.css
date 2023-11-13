@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
 
 /* Importa o arquivo reset.css para redefinir estilos padrão */
 @import url('reset.css');
@@ -95,19 +94,21 @@ main {
     font-size: 18px;
 }
 
+/* Estilos do contêiner de balões */
 .balloon-box {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     flex-direction: row;
     align-content: space-around;
-    width: 50rem;
-    height: 12rem
+    width: 50rem; /* Largura fixa do contêiner de balões */
+    height: 12rem; /* Altura fixa do contêiner de balões */
 }
 
+/* Estilos do balão individual */
 .balloon {
     border: 2px solid #ddd;
-    border-radius: 66px;
+    border-radius: 50px;
     padding: 11px;
     width: 150px;
     margin: 7px;
@@ -116,21 +117,23 @@ main {
     word-wrap: break-word;
 }
 
+/* Estilos do título no balão */
 .balloon h1 {
     margin: 10px 0;
     font-size: 1.2em;
 }
 
+/* Estilos do parágrafo no balão */
 .balloon p {
     margin: 5px 0;
 }
 
+/* Estilos da imagem no balão */
 .balloon img {
     display: block;
     margin: 0 auto;
 }
 
-/* Estilos da seção emagrecimento */
 /* Estilos da seção emagrecimento */
 #emagrecimento {
     position: relative;
@@ -140,36 +143,40 @@ main {
     border: 2px solid #ffffff;
     text-align: center;
     border-radius: 10px;
-    width: 700px;
-    margin: 0 auto;
+    width: 750px;
+    margin: 0 auto; /* Centraliza a seção horizontalmente */
     margin-bottom: 20px;
 }
 
+/* Estilos do contêiner da imagem de emagrecimento */
 .div-emagrecimento {
     margin-bottom: 20px;
 }
 
+/* Estilos da imagem de emagrecimento */
 .img-emagrecimento {
     width: 100px;
     height: 100px;
 }
 
+/* Estilos do título da seção */
 .titulo-prod {
-    font-size: 24px;
-    /* Ajuste o tamanho da fonte conforme necessário */
+    font-size: 24px; /* Ajuste o tamanho da fonte conforme necessário */
+    /* Adicione mais estilos conforme necessário */
 }
 
-/* Estilos da seção produto */
+/* Estilos da seção do produto */
 #container-produto {
     border: 2px solid rgba(0, 0, 0, 0.432);
     display: flex;
-    margin: auto;
+    margin: auto; /* Centraliza a seção horizontalmente */
     justify-content: space-around;
     align-items: flex-end;
-    width: 700px;
+    width: 750px;
     margin-bottom: 20px;
 }
 
+/* Estilos da imagem do produto */
 .img-prod {
     padding: 10px;
 }
@@ -179,27 +186,36 @@ main {
     height: 225px;
 }
 
+/* Estilos das informações do produto */
 .cta-prod {
     margin-left: 20px;
 }
 
-.titulo-prod {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
+/* Estilos do título do produto */
 .dados-prod {
     margin-bottom: 10px;
 }
 
+/* Estilos da descrição e benefícios do produto */
 .beneficios-prod {
     margin-bottom: 10px;
+}
+
+.beneficios-prod h4 {
+    font-size: 18px;
 }
 
 .beneficios-prod p {
     margin: 5px 0;
 }
 
+/* Estilos da lista de benefícios */
+.beneficios-prod ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Estilos do preço do produto */
 .preco-produto {
     font-size: 18px;
     display: block;
@@ -210,6 +226,7 @@ main {
     text-decoration: line-through;
 }
 
+/* Estilos do botão de compra */
 .comprar {
     display: inline-block;
     background-color: #45a049;
@@ -217,40 +234,72 @@ main {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 10px ;
 }
 
 
 /* Estilos da seção cards */
-#cards {
+/* Utilize um nome mais descritivo para a seção de cards de dicas */
+#tips-section {
     display: flex;
     justify-content: space-around;
-    position: relative;
-    top: 6px;
+    margin-top: 20px; /* Adicione um espaçamento superior para separar da seção anterior, ajuste conforme necessário */
 }
 
-.card {
+/* Utilize um nome mais descritivo para cada card de dica e adicione um espaçamento uniforme */
+.tips-card {
     color: #58378C;
     padding: 20px;
     margin: 0 10px;
     text-align: center;
     border: 2px solid rgba(0, 0, 0, 0.432);
     border-radius: 5px;
+    width: 200px; /* Adicione uma largura fixa para manter o espaçamento uniforme */
+    box-sizing: border-box; /* Evite que a borda adicione largura extra */
 }
 
-.card p {
+/* Estilize o parágrafo dentro do card de dica */
+.tips-card p {
     margin: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.card button {
+/* Estilize o botão dentro do card de dica */
+/* Estilize o botão dentro do card de dica e faça-o parecer com o botão de compra */
+.tips-card button {
     display: inline-block;
     background-color: #45a049;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+/* Adicione uma mudança de cor sutil ao passar o mouse sobre o botão de dica */
+.tips-card button:hover {
+    background-color: #36863C;
+}
+
+/* Estilize o botão de compra para reutilizar o estilo nos botões "Saiba mais" */
+.buy-button {
+    display: inline-block;
+    background-color: #45a049;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Adicione uma mudança de cor sutil ao passar o mouse sobre o botão de compra */
+.buy-button:hover {
+    background-color: #36863C;
+}
+
 
 /* Estilos da seção dicas */
 #dicas-perda-peso {
@@ -258,23 +307,27 @@ main {
     padding: 20px;
 }
 
+/* Estilos do contêiner da tabela */
 .table-container {
     display: flex;
     justify-content: center;
 }
 
+/* Estilos da linha da tabela */
 .row {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 20px;
 }
 
+/* Estilos do título da seção */
 #dicas-perda-peso h2 {
     font-size: 24px;
     color: #58378C;
 }
 
+/* Estilos da coluna individual */
 .column {
     flex: 1;
     padding: 20px;
@@ -282,6 +335,7 @@ main {
     border-radius: 5px;
 }
 
+/* Estilos do título da coluna */
 .column h3 {
     background-color: #58378C;
     color: whitesmoke;
@@ -289,10 +343,12 @@ main {
     margin: 1.5rem;
 }
 
+/* Estilos do parágrafo na coluna */
 .column p {
     margin: 10px 0;
 }
 
+/* Estilos do botão */
 button {
     background-color: #45a049;
     display: inline-block;
@@ -301,12 +357,14 @@ button {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
-}
+} 
 
+/* Estilos do link */
 a {
     text-decoration: none;
     color: white;
 }
+
 
 /* Estilos da tabela Nutricional */
 #tabela-nutricao {
@@ -341,14 +399,8 @@ a {
     font-weight: bold;
 }
 
-#tabela-nutricao table tr td:nth-child(2) {
-    text-align: center;
-}
-
-#tabela-nutricao table tr td:nth-child(3) {
-    text-align: center;
-}
-
+#tabela-nutricao table tr td:nth-child(2),
+#tabela-nutricao table tr td:nth-child(3),
 #tabela-nutricao table tr td:nth-child(4) {
     text-align: center;
 }
@@ -361,13 +413,19 @@ a {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
 #tabela-nutricao table button:hover {
     background-color: #45a049;
 }
 
-/* Estilos secção ingredientes */
+/* Comentário: Adicionei transição suave para o botão.
+   Centralizei o texto nas colunas 2, 3 e 4.
+   Mantive a paleta de cores consistente. */
+
+
+/* Estilos da seção ingredientes */
 #ingredientes {
     margin: 20px;
 }
@@ -395,11 +453,16 @@ a {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 #ingredientes button:hover {
     background-color: #45a049;
 }
+
+/* Comentário: Adicionei uma transição suave para o botão.
+   Mantive a paleta de cores consistente. */
+
 
 /* Estilos do rodapé */
 footer {
@@ -432,8 +495,20 @@ footer {
 .footer-shortcuts a {
     text-decoration: none;
     color: #95d1e3;
+    transition: color 0.3s ease; /* Adicionado transição suave para mudança de cor */
+}
+
+.footer-contact a:hover,
+.footer-shortcuts a:hover {
+    color: #45a049; /* Cor alterada para verde ao passar o mouse */
 }
 
 .footer-social-icons img {
     margin: 0 5px;
+    transition: transform 0.3s ease; /* Adicionado efeito de transição suave para as imagens */
 }
+
+.footer-social-icons img:hover {
+    transform: scale(1.2); /* Aumenta o tamanho da imagem ao passar o mouse */
+}
+

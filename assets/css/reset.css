@@ -3,7 +3,8 @@
 
 /* Define estilos para todos os elementos */
 * {
-    font-family: 'Raleway', sans-serif; /* Define a fonte para todos os elementos como Raleway com fallback para fontes genéricas sans-serif */
+    font-family: 'Raleway',  Arial, Helvetica, sans-serif; /* Define a fonte para todos os elementos como Raleway com fallback para fontes genéricas sans-serif */
     box-sizing: border-box; /* Define o modelo de caixa como border-box para incluir o preenchimento e a borda no cálculo total da largura e altura */
     margin: 0; /* Remove as margens padrão de todos os elementos */
+    padding: 0;
 }
