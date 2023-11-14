@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="./assets/css/carrinho.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <button class="header-button">NutriFit</button>
+        </a>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Barra de pesquisa" />
+      </div>
+
+      <div class="user-options">
+        <a href="#">
+          <img
+            src="img/icon/usuario.png"
+            alt="Usuário"
+            width="32"
+            height="32"
+          />
+        </a>
+        <a href="cadastro.html" class="user-link">Cadastre-se</a>
+        <a href="login.html" class="user-link">Faça login</a>
+        <a href="#">
+          <img
+            src="./img/icon/carrinho.png"
+            alt="Carrinho"
+            width="32"
+            height="32"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="carrinho">
+        <h1>Carrinho de Compras</h1>
+
+        <div class="produto">
+          <img src="/img/produtos/whey-gold-standard.png" alt="Produto" />
+          <div class="info-produto">
+            <h2>WHEY GOLD STANDARD</h2>
+            <p>Preço: R$ 99,90</p>
+            <label for="quantidade">Quantidade:</label>
+            <input
+              type="number"
+              id="quantidade"
+              name="quantidade"
+              value="1"
+              min="1"
+            />
+            <button class="remover">Remover do Carrinho</button>
+          </div>
+        </div>
+
+        <!-- Adicione mais produtos conforme necessário -->
+
+        <div class="total">
+          <p>Total: R$ 99,90</p>
+          <button class="finalizar-compra">Finalizar Compra</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-contact">
+          <p>Atendimento <a href="tel:(xx)xxxx-xxxx">(xx) xxxx-xxxx</a></p>
+          <p>
+            Email <a href="mailto:email@exemplo.com">NutriFit@comercial.com</a>
+          </p>
+        </div>
+
+        <div class="footer-shortcuts">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contato.html">Fale conosco</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social-icons">
+          <a href="https://www.facebook.com/NutriFitOficial" target="_blank">
+            <img
+              src="img/icon/facebook-logo.png"
+              alt="Facebook"
+              width="32"
+              height="32"
+            />
+          </a>
+          <a href="https://www.instagram.com/nutrifit.oficial/" target="_blank">
+            <img
+              src="img/icon/instagram.png"
+              alt="Instagram"
+              width="32"
+              height="32"
+            />
+          </a>
+        </div>
+      </div>
+      <p>© 2023 NutriFit</p>
+    </footer>
+  </body>
+</html>

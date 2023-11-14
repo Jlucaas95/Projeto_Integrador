@@ -104,18 +104,23 @@ h1 {
     margin: 20px 0;
 }
 
+
 #opcoes {
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
 }
 
+#opcoes h2{
+    font-size: 24px;
+    color: #58378C;
+}
 #opcoes div {
     text-align: center;
 }
 
 #opcoes img {
-    width: 100px;
+    width: 125px;
     height: 100px;
 }
 
@@ -125,6 +130,12 @@ h1 {
     margin: 20px 0;
 }
 
+#contato h2 {
+    font-size: 36px;
+    color: #58378C;
+
+}
+
 #contato form {
     max-width: 600px;
     margin: 0 auto;
@@ -132,14 +143,21 @@ h1 {
 
 #contato input, #contato textarea {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Adiciona uma borda para uma aparência mais nítida */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contato textarea {
+    height: 100px; /* Ajusta a altura do campo de texto */
 }
 
 #contato button {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 15px;
+    padding: 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -150,6 +168,7 @@ h1 {
 #contato button:hover {
     background-color: #45a049;
 }
+
 
 /* Estilos do rodapé */
 footer {
