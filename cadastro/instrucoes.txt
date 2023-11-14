@@ -1,3 +1,0 @@
-5. **Cadastro de Usuário:**
-   - Uma página para os usuários se cadastrarem na plataforma.
-   - Campos para informações de cadastro, como nome, e-mail, senha, etc.
