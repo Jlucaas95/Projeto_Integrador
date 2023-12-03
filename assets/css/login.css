@@ -197,65 +197,10 @@ body {
   color: #ffffff;
 }
 
-.data-nascimento {
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 20px 0 20px;
-  padding: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-.data-nascimento p,
-.genero p {
-  text-align: center;
-}
-
-.data-nascimento .select-data {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.data-nascimento .select-data select {
-  width: 105px;
-  border: 2px solid rgba(255, 225, 255, rgba(255, 255, 255, 0.2));
-  border-radius: 10px;
-  background: transparent;
-  margin: 5px 2px;
-  color: #ffffff;
-}
 
 .data-nascimento .select-data option {
   background: #333333;
   text-align: center;
-}
-
-.genero {
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 20px 0 20px;
-  padding: 10px 0 10px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-.genero .generos {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 5px 5px;
-}
-
-.genero .generos label {
-  width: 155px;
-  margin: 5px 5px;
 }
 
 .acessar {
@@ -273,6 +218,36 @@ body {
 .acessar p a:hover {
   text-decoration: underline;
   color: #333333;
+}
+
+/* ---------- Estilos dinâmicos ---------- */
+.required-popup::after {
+  content: "* Campo obrigatório";
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #DFDFDF;
+  font-size: 0.65rem;
+  padding: 0.2rem 0.3rem;
+  width: auto;
+  display: block;
+  background-color: #202020;
+}
+
+input.error {
+  border: solid 2px #992020;
+  background-color: #CCBBBB;
+  color: #662020;
+}
+
+input.correct {
+  background-color: #BBCCBB;
+  border: solid 2px #206620;
+  color: #206620;
+}
+
+.visible {
+  display: block;
 }
 
 /* Estilos do rodapé */
