@@ -1,30 +1,23 @@
 // ---------- FUNÇÕES GERAIS ---------- //
 
-// Função para mostrar popup de campo obrigatório
 function mostrarPopup(input, label) {
-  // Adiciona a classe 'required-popup' ao rótulo quando o campo ganha foco
   input.addEventListener("focus", () => {
     label.classList.add("required-popup");
   });
 
-  // Remove a classe 'required-popup' do rótulo quando o campo perde foco
   input.addEventListener("blur", () => {
     label.classList.remove("required-popup");
   });
 }
 
-// Função para estilizar o input quando correto
 function estilizarInputCorreto(input, helper) {
-  // Limpa a mensagem de ajuda, oculta e adiciona a classe 'correct' ao input
   helper.innerText = "";
   helper.classList.remove("visible");
   input.classList.remove("error");
   input.classList.add("correct");
 }
 
-// Função para estilizar o input quando incorreto
 function estilizarInputIncorreto(input, helper, mensagem) {
-  // Exibe a mensagem de erro, adiciona a classe 'visible' e 'error' ao input
   helper.innerText = mensagem;
   helper.classList.add("visible");
   input.classList.add("error");
@@ -33,7 +26,6 @@ function estilizarInputIncorreto(input, helper, mensagem) {
 
 // ---------- VALIDAÇÃO GENÉRICA ---------- //
 
-// Função de validação genérica
 function validarCampo(
   valor,
   regex,
@@ -43,15 +35,12 @@ function validarCampo(
   mensagemErroRegex
 ) {
   if (!regex.test(valor)) {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
     estilizarInputIncorreto(inputElement, helperElement, mensagemErroRegex);
     return false;
   } else if (valor.length < 3) {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
     estilizarInputIncorreto(inputElement, helperElement, mensagemErroMinLength);
     return false;
   } else {
-    // Validação bem-sucedida: marca como correto
     estilizarInputCorreto(inputElement, helperElement);
     return true;
   }
@@ -59,25 +48,19 @@ function validarCampo(
 
 // ---------- VALIDAÇÃO DINÂMICA ---------- //
 
-// Objeto para armazenar o estado de validação de cada input
 const inputsCorretos = {};
 
-// Função para adicionar validação dinâmica a um input
 function adicionarValidacaoDinamica(input, label, helper, validacao) {
-  // Adiciona funcionalidade de mostrar o popup e valida ao perder o foco
   mostrarPopup(input, label);
   input.addEventListener("blur", () => {
     validacao(input.value, helper);
   });
 }
 
-// Função de validação para o campo de nome de usuário
 function validarUsername(valor, helper) {
-  // Expressão regular que permite apenas letras e números
   const regexUsername = /^[A-Za-z0-9]+$/;
 
   if (!regexUsername.test(valor)) {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
     estilizarInputIncorreto(
       usernameInput,
       usernameHelper,
@@ -85,7 +68,6 @@ function validarUsername(valor, helper) {
     );
     inputsCorretos.username = false;
   } else if (valor.length < 3) {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
     estilizarInputIncorreto(
       usernameInput,
       usernameHelper,
@@ -93,13 +75,11 @@ function validarUsername(valor, helper) {
     );
     inputsCorretos.username = false;
   } else {
-    // Validação bem-sucedida: marca como correto
     estilizarInputCorreto(usernameInput, usernameHelper);
     inputsCorretos.username = true;
   }
 }
 
-// Uso da função de validação genérica para validar o campo de nome
 function validarNome(valor, helper) {
   const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s']+$/;
   const mensagemErroMinLength = "Seu nome precisa ter 3 ou mais caracteres!";
@@ -115,7 +95,6 @@ function validarNome(valor, helper) {
   );
 }
 
-// Uso da função de validação genérica para validar o campo de sobrenome
 function validarSobrenome(valor, helper) {
   const regexSobrenome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s']+$/;
   const mensagemErroMinLength =
@@ -133,7 +112,6 @@ function validarSobrenome(valor, helper) {
   );
 }
 
-// Uso da função de validação genérica para validar o campo de e-mail
 function validarEmail(valor, helper) {
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const mensagemErroMinLength = "O e-mail precisa ter 3 ou mais caracteres!";
@@ -149,10 +127,9 @@ function validarEmail(valor, helper) {
   );
 }
 
-// Uso da função de validação genérica para validar o campo de senha
 function validarSenha(valor, helper) {
   const mensagemErroMinLength = "A senha deve ter pelo menos 6 caracteres";
-  const mensagemErroRegex = ""; // Como a senha não possui restrições de formato específicas, deixamos a mensagem de erro vazia
+  const mensagemErroRegex = "";
 
   return validarCampo(
     valor,
@@ -164,13 +141,11 @@ function validarSenha(valor, helper) {
   );
 }
 
-// Uso da função de validação genérica para validar o campo de confirmação de senha
 function validarConfirmaSenha(valor, helper) {
   const senhaOriginal = senhaInput.value.trim();
   const mensagemErroMinLength = "A senha inserida não pode estar vazia";
   const mensagemErroRegex = "As senhas não coincidem";
 
-  // Chamada à função validarCampo com mensagens específicas para a confirmação de senha
   return (
     validarCampo(
       valor,
@@ -187,8 +162,6 @@ function validarConfirmaSenha(valor, helper) {
 const usernameInput = document.querySelector('input[name="username"]');
 const usernameLabel = document.querySelector('label[for="username"]');
 const usernameHelper = document.getElementById("username-helper");
-
-// Adiciona validação dinâmica ao campo de nome de usuário
 adicionarValidacaoDinamica(
   usernameInput,
   usernameLabel,
@@ -196,12 +169,48 @@ adicionarValidacaoDinamica(
   validarUsername
 );
 
-// ... Repetir o mesmo padrão para os outros campos ...
+const nomeInput = document.querySelector('input[name="nome"]');
+const nomeLabel = document.querySelector('label[for="nome"]');
+const nomeHelper = document.getElementById("nome-helper");
+adicionarValidacaoDinamica(nomeInput, nomeLabel, nomeHelper, validarNome);
 
-// Event listener para o botão de submit
+const sobrenomeInput = document.querySelector('input[name="sobrenome"]');
+const sobrenomeLabel = document.querySelector('label[for="sobrenome"]');
+const sobrenomeHelper = document.getElementById("sobrenome-helper");
+adicionarValidacaoDinamica(
+  sobrenomeInput,
+  sobrenomeLabel,
+  sobrenomeHelper,
+  validarSobrenome
+);
+
+const emailInput = document.querySelector('input[name="email"]');
+const emailLabel = document.querySelector('label[for="email"]');
+const emailHelper = document.getElementById("email-helper");
+adicionarValidacaoDinamica(emailInput, emailLabel, emailHelper, validarEmail);
+
+const senhaInput = document.querySelector('input[name="senha"]');
+const senhaLabel = document.querySelector('label[for="senha"]');
+const senhaHelper = document.getElementById("senha-helper");
+adicionarValidacaoDinamica(senhaInput, senhaLabel, senhaHelper, validarSenha);
+
+const confirmaSenhaInput = document.querySelector(
+  'input[name="confirmar-senha"]'
+);
+const confirmaSenhaLabel = document.querySelector(
+  'label[for="confirmar-senha"]'
+);
+const confirmaSenhaHelper = document.getElementById("confirmar-senha-helper");
+adicionarValidacaoDinamica(
+  confirmaSenhaInput,
+  confirmaSenhaLabel,
+  confirmaSenhaHelper,
+  validarConfirmaSenha
+);
+
 const btnSubmit = document.querySelector('button[type="submit"]');
+
 btnSubmit.addEventListener("click", (e) => {
-  // Verifica se todos os campos foram preenchidos corretamente
   for (const key in inputsCorretos) {
     if (!inputsCorretos[key]) {
       e.preventDefault();
@@ -210,9 +219,6 @@ btnSubmit.addEventListener("click", (e) => {
     }
   }
 
-  // Se todos os campos estiverem corretos, exibe mensagem de sucesso
   alert("Formulário enviado com sucesso");
-
-  // Após o cadastro ser concluído, redireciona para login.html
   window.location.href = "./login.html";
 });
