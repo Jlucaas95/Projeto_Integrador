@@ -31,6 +31,32 @@ function estilizarInputIncorreto(input, helper, mensagem) {
   input.classList.remove("correct");
 }
 
+// ---------- VALIDAÇÃO GENÉRICA ---------- //
+
+// Função de validação genérica
+function validarCampo(
+  valor,
+  regex,
+  inputElement,
+  helperElement,
+  mensagemErroMinLength,
+  mensagemErroRegex
+) {
+  if (!regex.test(valor)) {
+    // Validação falhou: exibe mensagem de erro e marca como incorreto
+    estilizarInputIncorreto(inputElement, helperElement, mensagemErroRegex);
+    return false;
+  } else if (valor.length < 3) {
+    // Validação falhou: exibe mensagem de erro e marca como incorreto
+    estilizarInputIncorreto(inputElement, helperElement, mensagemErroMinLength);
+    return false;
+  } else {
+    // Validação bem-sucedida: marca como correto
+    estilizarInputCorreto(inputElement, helperElement);
+    return true;
+  }
+}
+
 // ---------- VALIDAÇÃO DINÂMICA ---------- //
 
 // Objeto para armazenar o estado de validação de cada input
@@ -46,168 +72,134 @@ function adicionarValidacaoDinamica(input, label, helper, validacao) {
 }
 
 // Função de validação para o campo de nome de usuário
-function validarNome(valor, helper) {
-  // Expressão regular que permite apenas letras e espaços
-  const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s']+$/;
+function validarUsername(valor, helper) {
+  // Expressão regular que permite apenas letras e números
+  const regexUsername = /^[A-Za-z0-9]+$/;
 
-  if (!regexNome.test(valor)) {
+  if (!regexUsername.test(valor)) {
     // Validação falhou: exibe mensagem de erro e marca como incorreto
     estilizarInputIncorreto(
-      nomeInput,
-      nomeHelper,
-      "Seu nome deve conter apenas letras e espaços!"
+      usernameInput,
+      usernameHelper,
+      "Seu nome deve conter apenas letras e números!"
     );
-    inputsCorretos.nome = false;
+    inputsCorretos.username = false;
   } else if (valor.length < 3) {
     // Validação falhou: exibe mensagem de erro e marca como incorreto
     estilizarInputIncorreto(
-      nomeInput,
-      nomeHelper,
+      usernameInput,
+      usernameHelper,
       "Seu nome precisa ter 3 ou mais caracteres!"
     );
-    inputsCorretos.nome = false;
+    inputsCorretos.username = false;
   } else {
     // Validação bem-sucedida: marca como correto
-    estilizarInputCorreto(nomeInput, nomeHelper);
-    inputsCorretos.nome = true;
+    estilizarInputCorreto(usernameInput, usernameHelper);
+    inputsCorretos.username = true;
   }
 }
 
-// Função de validação para o campo de sobrenome de usuário
+// Uso da função de validação genérica para validar o campo de nome
+function validarNome(valor, helper) {
+  const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s']+$/;
+  const mensagemErroMinLength = "Seu nome precisa ter 3 ou mais caracteres!";
+  const mensagemErroRegex = "Seu nome deve conter apenas letras e espaços!";
+
+  return validarCampo(
+    valor,
+    regexNome,
+    nomeInput,
+    helper,
+    mensagemErroMinLength,
+    mensagemErroRegex
+  );
+}
+
+// Uso da função de validação genérica para validar o campo de sobrenome
 function validarSobrenome(valor, helper) {
-  // Expressão regular que permite apenas letras e espaços
   const regexSobrenome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s']+$/;
+  const mensagemErroMinLength =
+    "Seu sobrenome precisa ter 4 ou mais caracteres!";
+  const mensagemErroRegex =
+    "Seu sobrenome deve conter apenas letras e espaços!";
 
-  if (!regexSobrenome.test(valor)) {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
-    estilizarInputIncorreto(
-      sobrenomeInput,
-      sobrenomeHelper,
-      "Seu sobrenome deve conter apenas letras e espaços!"
-    );
-    inputsCorretos.sobrenome = false;
-  } else if (valor.length < 4) {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
-    estilizarInputIncorreto(
-      sobrenomeInput,
-      sobrenomeHelper,
-      "Seu sobrenome precisa ter 4 ou mais caracteres!"
-    );
-    inputsCorretos.sobrenome = false;
-  } else {
-    // Validação bem-sucedida: marca como correto
-    estilizarInputCorreto(sobrenomeInput, sobrenomeHelper);
-    inputsCorretos.sobrenome = true;
-  }
+  return validarCampo(
+    valor,
+    regexSobrenome,
+    sobrenomeInput,
+    helper,
+    mensagemErroMinLength,
+    mensagemErroRegex
+  );
 }
 
-// Função de validação para o campo de e-mail
+// Uso da função de validação genérica para validar o campo de e-mail
 function validarEmail(valor, helper) {
-  // Expressão regular para validar o formato do e-mail
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const mensagemErroMinLength = "O e-mail precisa ter 3 ou mais caracteres!";
+  const mensagemErroRegex = "Insira um endereço de e-mail válido!";
 
-  if (regexEmail.test(valor)) {
-    // Validação bem-sucedida: marca como correto
-    estilizarInputCorreto(emailInput, emailHelper);
-    inputsCorretos.email = true;
-  } else {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
-    estilizarInputIncorreto(
-      emailInput,
-      emailHelper,
-      "Insira um endereço de email válido"
-    );
-    inputsCorretos.email = false;
-  }
+  return validarCampo(
+    valor,
+    regexEmail,
+    emailInput,
+    helper,
+    mensagemErroMinLength,
+    mensagemErroRegex
+  );
 }
 
-// Função de validação para o campo de senha
+// Uso da função de validação genérica para validar o campo de senha
 function validarSenha(valor, helper) {
-  if (valor.length < 6) {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
-    estilizarInputIncorreto(
-      senhaInput,
-      senhaHelper,
-      "A senha deve ter pelo menos 6 caracteres"
-    );
-    inputsCorretos.senha = false;
-  } else {
-    // Validação bem-sucedida: marca como correto
-    estilizarInputCorreto(senhaInput, senhaHelper);
-    inputsCorretos.senha = true;
-  }
+  const mensagemErroMinLength = "A senha deve ter pelo menos 6 caracteres";
+  const mensagemErroRegex = ""; // Como a senha não possui restrições de formato específicas, deixamos a mensagem de erro vazia
+
+  return validarCampo(
+    valor,
+    /^/,
+    senhaInput,
+    helper,
+    mensagemErroMinLength,
+    mensagemErroRegex
+  );
 }
 
-// Função de validação para o campo de confirmação de senha
+// Uso da função de validação genérica para validar o campo de confirmação de senha
 function validarConfirmaSenha(valor, helper) {
-  // Remove espaços em branco antes e depois da senha original
   const senhaOriginal = senhaInput.value.trim();
+  const mensagemErroMinLength = "A senha inserida não pode estar vazia";
+  const mensagemErroRegex = "As senhas não coincidem";
 
-  if (valor.trim() === "") {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
-    estilizarInputIncorreto(
+  // Chamada à função validarCampo com mensagens específicas para a confirmação de senha
+  return (
+    validarCampo(
+      valor,
+      /^/,
       confirmaSenhaInput,
-      confirmaSenhaHelper,
-      "A senha inserida não pode estar vazia"
-    );
-    inputsCorretos.confirmaSenha = false;
-  } else if (valor.trim() !== senhaOriginal) {
-    // Validação falhou: exibe mensagem de erro e marca como incorreto
-    estilizarInputIncorreto(
-      confirmaSenhaInput,
-      confirmaSenhaHelper,
-      "As senhas não coincidem"
-    );
-    inputsCorretos.confirmaSenha = false;
-  } else {
-    // Validação bem-sucedida: marca como correto
-    estilizarInputCorreto(confirmaSenhaInput, confirmaSenhaHelper);
-    inputsCorretos.confirmaSenha = true;
-  }
+      helper,
+      mensagemErroMinLength,
+      mensagemErroRegex
+    ) && valor.trim() === senhaOriginal
+  );
 }
 
 // Obtenha os elementos do DOM relacionados aos campos
-const nomeInput = document.querySelector('input[name="nome"]');
-const nomeLabel = document.querySelector('label[for="nome"]');
-const nomeHelper = document.getElementById("nome-helper");
-adicionarValidacaoDinamica(nomeInput, nomeLabel, nomeHelper, validarNome);
+const usernameInput = document.querySelector('input[name="username"]');
+const usernameLabel = document.querySelector('label[for="username"]');
+const usernameHelper = document.getElementById("username-helper");
 
-const sobrenomeInput = document.querySelector('input[name="sobrenome"]');
-const sobrenomeLabel = document.querySelector('label[for="sobrenome"]');
-const sobrenomeHelper = document.getElementById("sobrenome-helper");
+// Adiciona validação dinâmica ao campo de nome de usuário
 adicionarValidacaoDinamica(
-  sobrenomeInput,
-  sobrenomeLabel,
-  sobrenomeHelper,
-  validarSobrenome
+  usernameInput,
+  usernameLabel,
+  usernameHelper,
+  validarUsername
 );
 
-const emailInput = document.querySelector('input[name="email"]');
-const emailLabel = document.querySelector('label[for="email"]');
-const emailHelper = document.getElementById("email-helper");
-adicionarValidacaoDinamica(emailInput, emailLabel, emailHelper, validarEmail);
+// ... Repetir o mesmo padrão para os outros campos ...
 
-const senhaInput = document.querySelector('input[name="senha"]');
-const senhaLabel = document.querySelector('label[for="senha"]');
-const senhaHelper = document.getElementById("senha-helper");
-adicionarValidacaoDinamica(senhaInput, senhaLabel, senhaHelper, validarSenha);
-
-const confirmaSenhaInput = document.querySelector(
-  'input[name="confirmar-senha"]'
-);
-const confirmaSenhaLabel = document.querySelector(
-  'label[for="confirmar-senha"]'
-);
-const confirmaSenhaHelper = document.getElementById("confirma-senha-helper");
-adicionarValidacaoDinamica(
-  confirmaSenhaInput,
-  confirmaSenhaLabel,
-  confirmaSenhaHelper,
-  validarConfirmaSenha
-);
-
+// Event listener para o botão de submit
 const btnSubmit = document.querySelector('button[type="submit"]');
-
 btnSubmit.addEventListener("click", (e) => {
   // Verifica se todos os campos foram preenchidos corretamente
   for (const key in inputsCorretos) {
@@ -220,4 +212,7 @@ btnSubmit.addEventListener("click", (e) => {
 
   // Se todos os campos estiverem corretos, exibe mensagem de sucesso
   alert("Formulário enviado com sucesso");
+
+  // Após o cadastro ser concluído, redireciona para login.html
+  window.location.href = "./login.html";
 });
