@@ -13,93 +13,95 @@
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <a href="index.html" class="logo-link">
-          <button class="header-button">NutriFit</button>
-        </a>
-      </div>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html" class="logo-link">
+            <span class="header-button" aria-label="Ir para a página inicial"
+              >NutriFit</span
+            >
+          </a>
+        </div>
 
-      <div class="search-bar">
-        <input
-          type="text"
-          placeholder="Barra de pesquisa"
-          style="flex: 1; margin: 0 20px"
-        />
-      </div>
-      
+        <div class="ul-nav">
+          <ul class="nav-menu">
+            <li>
+              <a href="javascript:void(0);" id="loginLink" class="disabled-link"
+                >Login</a
+              >
+            </li>
+            
+           <li><a href="cadastro.html" class="user-link">Cadastre-se</a></li>
+            <li>
+
+            <li>
+              <a href="index.html" aria-label="Perfil do Usuário">
+                <img
+                  src="img/icon/usuario.png"
+                  alt="Ícone do Usuário"
+                  width="32"
+                  height="32"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="carrinho.html" aria-label="Carrinho de Compras">
+                <img
+                  src="./img/icon/carrinho.png"
+                  alt="Ícone do Carrinho"
+                  width="32"
+                  height="32"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
-
+    
     <form action="" class="main">
       <h1>Cadastre-se</h1>
       <!-- Input de Username -->
       <div class="input-box">
         <label for="username">*Usuário:</label>
-        <input type="text" id="username" name="username">
-        <p id="username-helper" class="helper-text">
-          Mensagem de ajuda
-        </p>
+        <input type="text" id="username" name="username" />
+        <p id="username-helper" class="helper-text">Mensagem de ajuda</p>
       </div>
 
       <!-- Input de Nome -->
       <div class="input-box">
         <label for="nome">*Nome:</label>
-        <input type="text" id="nome" name="nome">
-        <p id="nome-helper" class="helper-text">
-          Mensagem de ajuda
-        </p>
+        <input type="text" id="nome" name="nome" />
+        <p id="nome-helper" class="helper-text">Mensagem de ajuda</p>
       </div>
 
       <!-- Input de Sobrenome -->
       <div class="input-box">
         <label for="sobrenome">*Sobrenome:</label>
-        <input
-          type="text"
-          id="sobrenome"
-          name="sobrenome"
-        >
-        <p id="sobrenome-helper" class="helper-text">
-          Mensagem de ajuda
-        </p>
+        <input type="text" id="sobrenome" name="sobrenome" />
+        <p id="sobrenome-helper" class="helper-text">Mensagem de ajuda</p>
       </div>
 
       <!-- Input de E-mail -->
       <div class="input-box">
         <label for="email">*E-mail:</label>
-        <input
-          type="email"
-          id="email"
-          name="email">
-        <p id="email-helper" class="helper-text">
-          Mensagem de ajuda
-        </p>
+        <input type="email" id="email" name="email" />
+        <p id="email-helper" class="helper-text">Mensagem de ajuda</p>
       </div>
 
       <!-- Inputs de Senha -->
       <div class="input-box input-senha">
         <label for="senha">*Senha:</label>
-        <input
-          type="password"
-          id="senha"
-          name="senha"
-        >
-        <p class="helper-text" id="senha-helper">
-          Mensagem de ajuda
-        </p>
+        <input type="password" id="senha" name="senha" />
+        <p class="helper-text" id="senha-helper">Mensagem de ajuda</p>
       </div>
 
       <div class="input-box input-confirmar-senha">
         <label for="confirmar-senha">*Confirmar Senha:</label>
-        <input
-          type="password"
-          id="confirmar-senha"
-          name="confirmar-senha"
-        />
-        <p class="helper-text" id="confirmar-senha-helper">
-          Mensagem de ajuda
-        </p>
+        <input type="password" id="confirmar-senha" name="confirmar-senha" />
+        <p class="helper-text" id="confirmar-senha-helper">Mensagem de ajuda</p>
       </div>
-      
+
       <div>
         <div class="data-nascimento">
           <p>Data de Nascimento</p>

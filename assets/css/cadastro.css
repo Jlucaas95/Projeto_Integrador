@@ -1,21 +1,22 @@
 @import url("reset.css");
 
 /* Estilos do cabeçalho */
-header {
+.header {
   background-color: #58378c;
   color: white;
   padding: 10px 20px;
   width: 100%;
   box-sizing: border-box;
   z-index: 1;
-  /* Adicionando z-index para garantir que o cabeçalho fique acima do conteúdo */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-end;
 }
 
-.logo,
-.search-bar,
-.user-options {
-  display: flex;
-  align-items: center;
+.logo-link {
+  text-decoration: none;
 }
 
 .header-button {
@@ -25,6 +26,7 @@ header {
   padding: 8px 20px;
   border-radius: 21px;
   font-size: 30px;
+  margin-left: 20px;
 }
 
 .header-button:hover {
@@ -32,22 +34,37 @@ header {
   cursor: pointer;
 }
 
-.search-bar input[type="text"] {
-  flex: 1;
-  padding: 11px;
-  border-radius: 20px;
-  margin: 0 20px;
+.ul-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  align-items: center;
 }
 
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu li {
+  margin-right: 20px;
+}
+
+.nav-menu a,
 .user-options a,
-.user-options span,
 .user-link {
   text-decoration: none;
   color: white;
-  display: block;
-  /* Isso fará com que os links sejam exibidos verticalmente um abaixo do outro */
-  margin-bottom: 10px;
-  /* Adiciona um espaçamento entre os links */
+  display: flex;
+  align-items: center;
+}
+
+.disabled-link {
+  pointer-events: none;
+  color: #8a8a8a;
 }
 
 body {
