@@ -1,2 +1,0 @@
-const uGEO = 'us';
-window.uGEO = uGEO;
