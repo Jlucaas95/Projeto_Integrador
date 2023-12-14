@@ -6,8 +6,9 @@
 
     <link rel="stylesheet" href="./assets/css/emagrecimento.css" />
 
+    <script src="./assets/js/emagrecimento.js" defer></script>
+
     <title>NutriFit - Sua loja de Suplementos</title>
-    <!-- Certifique-se de incluir o caminho correto para o seu arquivo de estilo -->
   </head>
   <body>
     <header>
@@ -16,7 +17,7 @@
           ><button class="header-button">NutriFit</button></a
         >
       </div>
-      
+
       <div class="user-options">
         <a href="#"
           ><img
@@ -26,21 +27,15 @@
             height="32"
             style="margin-right: 10px"
         /></a>
-        <a
-          href="cadastro.html"
-          style="text-decoration: none; color: white; display: block"
-          >Cadastre-se</a
-        >
-        <a href="login.html" style="text-decoration: none; color: white; display: block"
-          >Faça login</a
-        >
-        <a href="carrinho.html"
-          ><img
+        <a href="carrinho.html">
+          <img
             src="./img/icon/carrinho.png"
             alt="Carrinho"
             width="32"
             height="32"
-        /></a>
+          />
+          <span id="carrinho-quantidade"></span>
+        </a>
       </div>
     </header>
 
@@ -131,6 +126,30 @@
 
           <!-- Botão de Compra -->
           <a href="#" class="comprar" type="button">Comprar</a>
+        </div>
+      </section>
+
+      <!-- Seção Destaque -->
+      <section id="destaque" class="product-section">
+        <h2>Produtos em Destaque</h2>
+        <div id="container-destaques">
+          <!-- Adicione aqui os produtos em destaque -->
+        </div>
+      </section>
+
+      <!-- Seção Ofertas -->
+      <section id="ofertas" class="product-section">
+        <h2>Ofertas Especiais</h2>
+        <div id="container-ofertas">
+          <!-- Adicione aqui as ofertas especiais -->
+        </div>
+      </section>
+
+      <!-- Seção Lançamentos -->
+      <section id="lancamentos" class="product-section">
+        <h2>Lançamentos</h2>
+        <div id="container-lancamentos">
+          <!-- Adicione aqui os produtos lançamentos -->
         </div>
       </section>
 

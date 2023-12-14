@@ -237,6 +237,69 @@ main {
     margin-top: 10px ;
 }
 
+/* Estilos para as seções de produtos */
+.product-section {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 80%; /* Ajuste a largura conforme necessário */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.product-section h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.product-section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+.product-section .product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-section .product {
+    flex: 1;
+    max-width: 300px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.product-section .product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-section .product p {
+    font-size: 14px;
+    color: #555;
+}
+
+.product-section .product button {
+    background-color: #45a049;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-section .product button:hover {
+    background-color: #36863C;
+}
+
 
 /* Estilos da seção cards */
 /* Utilize um nome mais descritivo para a seção de cards de dicas */

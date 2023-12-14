@@ -13,22 +13,9 @@
   justify-content: space-between;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-content: flex-end;
 }
 
-.logo-link {
-  text-decoration: none;
-}
 
-.header-button {
-  background-color: #2e97a7;
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 21px;
-  font-size: 30px;
-  margin-left: 20px;
-}
 
 .header-button:hover {
   background-color: #1f6a75;
