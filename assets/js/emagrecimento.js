@@ -1,8 +1,48 @@
+// Encapsule as variáveis globais em um objeto para evitar poluição global
+const carrinhoApp = {
+  carrinho: [],
+  carrinhoCount: 0,
+};
+
+// Função para atualizar o número no ícone do carrinho
+function atualizarNumeroCarrinho() {
+  const numeroCarrinho = document.getElementById("carrinho-quantidade");
+
+  if (numeroCarrinho) {
+    numeroCarrinho.textContent = carrinhoApp.carrinhoCount.toString();
+  }
+}
+
+// Função para adicionar produtos ao carrinho
+function adicionarAoCarrinho(nome, precoPromocional) {
+  // Crie um objeto representando o produto a ser adicionado ao carrinho
+  const produto = {
+    nome: nome,
+    preco: precoPromocional,
+  };
+
+  // Adicione o produto ao array de carrinho
+  carrinhoApp.carrinho.push(produto);
+
+  // Incrementa o contador do carrinho
+  carrinhoApp.carrinhoCount++;
+
+  // Atualiza o número no ícone do carrinho
+  atualizarNumeroCarrinho();
+
+  // Exibe um alerta informando que o produto foi adicionado ao carrinho
+  alert(`${nome} adicionado ao carrinho!`);
+}
+
+// Adicione a função no escopo global para garantir que ela seja acessível no HTML
+window.atualizarNumeroCarrinho = atualizarNumeroCarrinho;
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Lista de seções de produtos
   const secoes = ["destaques", "ofertas", "lancamentos"];
   const produtosPorSecao = 3;
-  const carrinho = []; // Array para armazenar os produtos no carrinho
 
+  // Função para gerar um produto aleatório
   function gerarProdutoAleatorio() {
     return {
       nome: "Produto " + Math.floor(Math.random() * 100),
@@ -13,36 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 
-  // Referência ao script adicionarAoCarrinho.js
-  const scriptAdicionarAoCarrinho = document.createElement("script");
-  scriptAdicionarAoCarrinho.src = "./adicionarAoCarrinho.html";
-  scriptAdicionarAoCarrinho.defer = true;
-  document.head.appendChild(scriptAdicionarAoCarrinho);
-
-  function atualizarInterfaceCarrinho() {
-    const carrinhoContainer = document.getElementById("carrinho-container");
-    const carrinhoQuantidade = document.getElementById("carrinho-quantidade");
-
-    if (!carrinhoContainer || !carrinhoQuantidade) {
-      console.error("Contêiner ou quantidade do carrinho não encontrado.");
-      return;
-    }
-
-    // Limpa o conteúdo do contêiner antes de atualizar
-    carrinhoQuantidade.textContent = "";
-
-    if (carrinho.length === 0) {
-      // Se o carrinho estiver vazio, exibe uma mensagem indicando isso
-      carrinhoQuantidade.textContent = "0";
-    } else {
-      // Exibe a quantidade de itens no carrinho
-      carrinhoQuantidade.textContent = carrinho.length.toString();
-    }
-  }
-
-  // Chame a função para inicializar a interface do carrinho
-  atualizarInterfaceCarrinho();
-
+  // Função para renderizar produtos por seção
   function renderizarProdutosPorSecao(secao) {
     const containerId = "container-" + secao;
     const container = document.getElementById(containerId);
@@ -53,12 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Loop para gerar produtos na seção
     for (let i = 0; i < produtosPorSecao; i++) {
       const produto = gerarProdutoAleatorio();
 
       const produtoElement = document.createElement("div");
       produtoElement.classList.add("produto");
 
+      // Estrutura HTML do produto
       produtoElement.innerHTML = `
         <div class="img-prod">
           <img src="${produto.imagem}" alt="${produto.nome}" />
@@ -82,8 +95,68 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Renderizar produtos para cada seção
+  // Loop para renderizar produtos em cada seção
   secoes.forEach((secao) => {
     renderizarProdutosPorSecao(secao);
   });
+
+  // Lógica para exibir os produtos na página de emagrecimento
+  const storedProducts = localStorage.getItem("storedProducts");
+  const products = storedProducts ? JSON.parse(storedProducts) : [];
+
+  // Função para adicionar produtos ao container
+  function addProductsToContainer(containerId, productList) {
+    const container = document.getElementById(containerId);
+
+    if (container) {
+      // Limpa o conteúdo atual do container
+      container.innerHTML = "";
+
+      // Adiciona os novos produtos ao container
+      productList.forEach((product) => {
+        const productElement = createProductElement(product);
+        container.appendChild(productElement);
+      });
+    }
+  }
+
+  // Função para criar elementos HTML para cada produto
+  function createProductElement(product) {
+    const productDiv = document.createElement("div");
+    productDiv.classList.add("product");
+
+    // Crie elementos para exibir as informações do produto (exemplo: nome, preço)
+    // Substitua as propriedades abaixo pelos dados reais do produto
+    const productName = document.createElement("h3");
+    productName.textContent = product.nome;
+
+    const productPrice = document.createElement("p");
+    productPrice.textContent = `Preço: ${product.preco}`;
+
+    // Adicione os elementos ao elemento do produto
+    productDiv.appendChild(productName);
+    productDiv.appendChild(productPrice);
+
+    return productDiv;
+  }
+
+  // Adicione esta parte se você quiser adicionar os produtos em uma página específica
+  // Por exemplo, ao carregar a página de emagrecimento
+  window.addEventListener("load", function () {
+    // Substitua 'emagrecimento-container' pelo ID do container desejado
+    addProductsToContainer("emagrecimento-container", products);
+  });
+
+  // Lógica para exibir os produtos no carrinho
+  const carrinhoIcon = document.getElementById("carrinho-icon");
+
+  if (carrinhoIcon) {
+    carrinhoIcon.addEventListener("click", function () {
+      // Salva os produtos do carrinho no localStorage
+      localStorage.setItem("carrinho", JSON.stringify(carrinhoApp.carrinho));
+
+      // Redireciona para a página "carrinho.html"
+      window.location.href = "carrinho.html";
+    });
+  }
 });
