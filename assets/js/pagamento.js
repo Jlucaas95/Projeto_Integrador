@@ -1,23 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Obtém o elemento do botão "Pagar" por ID
   const botaoPagar = document.getElementById("botao-pagar");
 
   // Adiciona um ouvinte de evento ao botão "Pagar"
   if (botaoPagar) {
-    botaoPagar.addEventListener("click", function () {
-      // Simula uma chamada assíncrona para processar o pagamento
-      simularProcessamentoDePagamento()
-        .then(() => {
-          alert("Pagamento bem-sucedido! Obrigado pela compra.");
-          // Redireciona para a página inicial após o pagamento bem-sucedido (simulação)
-          window.location.href = "index.html";
-        })
-        .catch((erro) => {
-          console.error("Erro durante o processamento do pagamento:", erro);
-          alert(
-            "Ocorreu um erro durante o processamento do pagamento. Tente novamente."
-          );
-        });
-    });
+    botaoPagar.addEventListener("click", processarPagamento);
+  }
+
+  // Função para processar o pagamento
+  async function processarPagamento() {
+    try {
+      // Desabilita o botão para evitar cliques duplicados durante o processamento
+      desabilitarBotaoPagar();
+
+      // Simula o processamento de pagamento assíncrono
+      await simularProcessamentoDePagamento();
+
+      // Exibe mensagem de sucesso
+      exibirMensagemSucesso();
+
+      // Redireciona para a página inicial
+      redirecionarParaPaginaInicial();
+
+      // Envia todos os dados para o servidor (simulação)
+      enviarDadosParaServidor();
+    } catch (erro) {
+      console.error("Erro durante o processamento do pagamento:", erro);
+
+      // Exibe mensagem de erro
+      exibirMensagemErro();
+    } finally {
+      // Habilita o botão, independentemente do resultado do processamento
+      habilitarBotaoPagar();
+    }
   }
 
   // Função para simular o processamento de pagamento (substitua por sua lógica real)
@@ -37,5 +52,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }, 2000);
     });
+  }
+
+  // Função para desabilitar o botão durante o processamento
+  function desabilitarBotaoPagar() {
+    botaoPagar.disabled = true;
+  }
+
+  // Função para habilitar o botão após o processamento
+  function habilitarBotaoPagar() {
+    botaoPagar.disabled = false;
+  }
+
+  // Função para exibir mensagem de sucesso
+  function exibirMensagemSucesso() {
+    alert("Pagamento bem-sucedido! Obrigado pela compra.");
+  }
+
+  // Função para exibir mensagem de erro
+  function exibirMensagemErro() {
+    alert(
+      "Ocorreu um erro durante o processamento do pagamento. Tente novamente."
+    );
+  }
+
+  // Função para redirecionar para a página inicial
+  function redirecionarParaPaginaInicial() {
+    window.location.href = "index.html";
+  }
+
+  // Função para simular o envio de dados para o servidor
+  function enviarDadosParaServidor() {
+    // Simula o envio de dados para o servidor (pode ser substituído por uma chamada AJAX real)
+    alert("Todos os dados foram enviados para o servidor.");
   }
 });
