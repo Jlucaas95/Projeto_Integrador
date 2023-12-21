@@ -8,45 +8,51 @@
   padding: 10px 20px;
   width: 100%;
   box-sizing: border-box;
-  z-index: 1; /* Adicionando z-index para garantir que o cabeçalho fique acima do conteúdo */
-}
-
-.logo,
-.search-bar,
-.user-options {
+  z-index: 1;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
-.header-button {
-  background-color: #2e97a7;
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 21px;
-  font-size: 30px;
-}
+
 
 .header-button:hover {
   background-color: #1f6a75;
   cursor: pointer;
 }
 
-.search-bar input[type="text"] {
-  flex: 1;
-  padding: 11px;
-  border-radius: 20px;
-  margin: 0 20px;
+.ul-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* Corrigido para flex-end em vez de right */
 }
 
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu li {
+  margin-right: 20px;
+}
+
+.nav-menu a,
 .user-options a,
-.user-options span,
 .user-link {
   text-decoration: none;
   color: white;
-  display: block;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
+
+.disabled-link {
+  pointer-events: none;
+  color: #8a8a8a;
+}
+
 
 body {
   display: flex;
@@ -196,7 +202,6 @@ body {
 .input-nome input::placeholder {
   color: #ffffff;
 }
-
 
 .data-nascimento .select-data option {
   background: #333333;

@@ -4,74 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Entrar</title>
-
     <link rel="stylesheet" href="./assets/css/login.css" />
-
     <script src="./assets/js/login.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <div class="logo">
-        <a href="index.html" class="logo-link">
-          <button class="header-button">NutriFit</button>
-        </a>
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Barra de pesquisa" />
-      </div>
-      <div class="user-options">
-        <a href="#">
-          <img
-            src="img/icon/usuario.png"
-            alt="Usuário"
-            width="32"
-            height="32"
-          />
-        </a>
-        <a href="cadastro.html" class="user-link">Cadastre-se</a>
-        <a href="#" class="user-link" id="loginLink">Faça login</a>
-        <a href="#">
-          <img
-            src="./img/icon/carrinho.png"
-            alt="Carrinho"
-            width="32"
-            height="32"
-          />
-        </a>
-      </div>
-    </header>
+    
 
     <main>
       <div class="main">
         <form id="loginForm">
           <h1>Login</h1>
           <div class="input-box">
+            <label for="email">E-mail</label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="E-mail"
+              placeholder="Digite seu e-mail"
               required
             />
             <i class="bx bx-user"></i>
           </div>
           <div class="input-box">
+            <label for="senha">Senha</label>
             <input
               type="password"
               id="senha"
               name="senha"
-              placeholder="Senha"
+              placeholder="Digite sua senha"
               required
             />
             <i class="bx bxs-lock-alt"></i>
           </div>
           <div class="lembrar-senha">
-            <label>
-              <input type="checkbox" name="lembrar" /> Lembrar Senha
-            </label>
             <a href="/esqueci-a-senha.html">Esqueci a senha</a>
           </div>
-          <button type="submit" class="botao">Enter</button>
+          <button class="botao"><a href="index2.html">Entrar</a></button>
+
           <div class="registar">
             <p>Não tem conta?<a href="cadastro.html"> Cadastre-se</a></p>
           </div>

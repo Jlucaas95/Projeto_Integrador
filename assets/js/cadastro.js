@@ -57,29 +57,6 @@ function adicionarValidacaoDinamica(input, label, helper, validacao) {
   });
 }
 
-function validarUsername(valor, helper) {
-  const regexUsername = /^[A-Za-z0-9]+$/;
-
-  if (!regexUsername.test(valor)) {
-    estilizarInputIncorreto(
-      usernameInput,
-      usernameHelper,
-      "Seu nome deve conter apenas letras e números!"
-    );
-    inputsCorretos.username = false;
-  } else if (valor.length < 3) {
-    estilizarInputIncorreto(
-      usernameInput,
-      usernameHelper,
-      "Seu nome precisa ter 3 ou mais caracteres!"
-    );
-    inputsCorretos.username = false;
-  } else {
-    estilizarInputCorreto(usernameInput, usernameHelper);
-    inputsCorretos.username = true;
-  }
-}
-
 function validarNome(valor, helper) {
   const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s']+$/;
   const mensagemErroMinLength = "Seu nome precisa ter 3 ou mais caracteres!";
