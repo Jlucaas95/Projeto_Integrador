@@ -457,10 +457,10 @@ SELECT * FROM Pedido;
 -- Selecionar todas as categorias:
 SELECT * FROM Categoria;
 
--- Selecionar todas as pepedido_produto:
+-- Selecionar todos os registros de pedido_produto:
 SELECT * FROM pedido_produto;
 
--- Selecionar todas as catpedido_produto:
+-- Selecionar todos os registros de categoria_produto:
 SELECT * FROM categoria_produto;
 
 -- Obter os detalhes de um pedido específico:

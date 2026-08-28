@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs');
 exports.register = (req, res) => {
   const { nome, email, senha } = req.body;
 
-  // Criptografa a senha
+  // Nunca armazena a senha em texto puro no banco de dados.
   const hashed = bcrypt.hashSync(senha, 8);
 
   // Comando SQL para inserir no banco
@@ -18,7 +18,8 @@ exports.register = (req, res) => {
       return res.status(500).send('Erro ao cadastrar usuário.');
     }
 
-    res.send('Usuário cadastrado com sucesso!');
+    // 201 informa ao cliente que um novo recurso foi criado.
+    res.status(201).send('Usuário cadastrado com sucesso!');
   });
 };
 
@@ -33,7 +34,7 @@ exports.login = (req, res) => {
       return res.status(401).send('Usuário não encontrado.');
     }
 
-    // Recupera o usuário do resultado
+    // O e-mail identifica um único usuário; por isso usamos o primeiro resultado.
     const user = results[0];
 
     // Verifica se a senha informada bate com a senha criptografada

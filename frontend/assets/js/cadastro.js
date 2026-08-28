@@ -135,17 +135,7 @@ function validarConfirmaSenha(valor, helper) {
   );
 }
 
-// Obtenha os elementos do DOM relacionados aos campos
-const usernameInput = document.querySelector('input[name="username"]');
-const usernameLabel = document.querySelector('label[for="username"]');
-const usernameHelper = document.getElementById("username-helper");
-adicionarValidacaoDinamica(
-  usernameInput,
-  usernameLabel,
-  usernameHelper,
-  validarUsername
-);
-
+// Associa apenas campos que existem no formulário aos respectivos validadores.
 const nomeInput = document.querySelector('input[name="nome"]');
 const nomeLabel = document.querySelector('label[for="nome"]');
 const nomeHelper = document.getElementById("nome-helper");

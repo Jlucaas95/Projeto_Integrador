@@ -23,7 +23,12 @@ const authRoutes = require('./routes/auth');
 // Usa as rotas na rota base /api
 app.use('/api', authRoutes);
 
-// Inicia o servidor na porta 3000
-app.listen(3000, () => {
-  console.log('🚀 Servidor rodando na porta 3000');
-});
+// Inicia o servidor somente quando este arquivo for executado diretamente.
+// A exportação permite testar a aplicação sem abrir uma porta de rede.
+if (require.main === module) {
+  app.listen(3000, () => {
+    console.log('🚀 Servidor rodando na porta 3000');
+  });
+}
+
+module.exports = app;
