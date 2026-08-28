@@ -25,3 +25,6 @@ Thumbs.db
 # Banco de dados local ou dump
 *.sql
 *.sqlite
+
+# Mantém versionado apenas o script de criação do banco
+!db_Nutrift/init.sql
