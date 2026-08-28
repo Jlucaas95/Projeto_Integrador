@@ -26,6 +26,8 @@ Neste projeto, utilizamos as seguintes tecnologias:
 
 - SQL
 
+- Node.js
+
   
 
 ## Layouts de Telas Responsivos para E-commerce
@@ -64,17 +66,34 @@ git clone https://github.com/Jlucaas95/Projeto_Integrador.git
 
 
 
-2. Instale as dependências necessárias, se aplicável.
+2. Entre na pasta do backend e instale as dependências:
 
-   
+   ```bash
+   cd backend
+   npm install
+   ```
 
-3. Execute o projeto com o seguinte comando:
+3. Configure as variáveis `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` e,
+   opcionalmente, `DB_PORT` em um arquivo `backend/.env`.
 
-comando de execução (por exemplo, npm start, python app.py, etc.)
+4. Inicie a API Node.js (disponível em `http://localhost:3000`):
 
+   ```bash
+   npm start
+   ```
 
+5. Abra um dos arquivos HTML da pasta `frontend` no navegador.
 
-4. Abra o projeto em seu navegador ou ambiente de desenvolvimento local.
+## Testes
+
+Na pasta `backend`, execute a suíte automatizada com:
+
+```bash
+npm test
+```
+
+Os testes usam uma conexão de banco simulada, portanto não alteram os dados do
+MySQL configurado no arquivo `.env`.
 
 ## Contribuições
 
