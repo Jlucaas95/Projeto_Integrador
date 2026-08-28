@@ -1,0 +1,21 @@
+document.querySelector('#loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = document.querySelector('#email').value.trim();
+  const senha = document.querySelector('#senha').value;
+
+  try {
+    const resposta = await fetch('http://localhost:3000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, senha }),
+    });
+
+    const texto = await resposta.text();
+    alert(texto);
+    if (resposta.ok) window.location.href = 'index2.html';
+  } catch (erro) {
+    console.error('Erro no login:', erro);
+    alert('Erro no login. Verifique suas credenciais.');
+  }
+});
