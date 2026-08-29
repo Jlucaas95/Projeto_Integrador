@@ -199,7 +199,7 @@ btnSubmit.addEventListener("click", async (e) => {
   const email = emailInput.value.trim();
   const senha = senhaInput.value;
 
-  const dia = document.querySelector('select[name="Dia"]').value.replace('dia-', '');
+  const dia = document.querySelector('select[name="dia"]').value.replace('dia-', '');
   const mes = document.querySelector('select[name="mes"]').value.replace('mes-', '');
   const ano = document.querySelector('select[name="ano"]').value.replace('ano-', '');
   const data_nascimento = `${ano}-${mes.padStart(2, '0')}-${dia.padStart(2, '0')}`;
@@ -209,7 +209,7 @@ btnSubmit.addEventListener("click", async (e) => {
   const dados = { nome, sobrenome, email, senha, data_nascimento, genero };
 
   try {
-    const resposta = await fetch('http://localhost:3000/api/register', {
+    const resposta = await fetch(`${window.NUTRIFT_API_URL}/api/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dados),
