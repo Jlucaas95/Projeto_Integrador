@@ -12,6 +12,7 @@ require('dotenv').config();
 
 // Cria uma instância da aplicação Express
 const app = express();
+const port = Number(process.env.PORT) || 3000;
 
 // Middleware para permitir CORS e receber JSON
 app.use(cors());
@@ -26,8 +27,8 @@ app.use('/api', authRoutes);
 // Inicia o servidor somente quando este arquivo for executado diretamente.
 // A exportação permite testar a aplicação sem abrir uma porta de rede.
 if (require.main === module) {
-  app.listen(3000, () => {
-    console.log('🚀 Servidor rodando na porta 3000');
+  app.listen(port, () => {
+    console.log(`🚀 Servidor rodando na porta ${port}`);
   });
 }
 
