@@ -43,7 +43,7 @@
 
       <div class="input-group">
         <label>Data de nascimento *</label>
-        <select name="Dia" required>
+        <select name="dia" aria-label="Dia de nascimento" required>
           <option disabled selected>Dia</option>
           <!-- Dias de 1 a 31 -->
           <!-- Pode gerar automaticamente via JS se preferir -->
@@ -52,14 +52,14 @@
           <!-- ... até dia 31 -->
         </select>
 
-        <select name="mes" required>
+        <select name="mes" aria-label="Mês de nascimento" required>
           <option disabled selected>Mês</option>
           <option value="mes-1">1</option>
           <option value="mes-2">2</option>
           <!-- ... até mês 12 -->
         </select>
 
-        <select name="ano" required>
+        <select name="ano" aria-label="Ano de nascimento" required>
           <option disabled selected>Ano</option>
           <option value="ano-2000">2000</option>
           <option value="ano-1999">1999</option>
@@ -80,6 +80,7 @@
     <p>Já tem conta? <a href="login.html">Entrar</a></p>
   </main>
 
+  <script src="assets/js/config.js"></script>
   <script src="assets/js/cadastro.js"></script>
 </body>
 </html>

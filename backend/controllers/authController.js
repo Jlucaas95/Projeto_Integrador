@@ -7,19 +7,32 @@ const bcrypt = require('bcryptjs');
 exports.register = (req, res) => {
   const { nome, email, senha } = req.body;
 
-  // Nunca armazena a senha em texto puro no banco de dados.
-  const hashed = bcrypt.hashSync(senha, 8);
-
-  // Comando SQL para inserir no banco
-  const sql = 'INSERT INTO Usuario (Nome, Email, Senha) VALUES (?, ?, ?)';
-  db.query(sql, [nome, email, hashed], (err) => {
-    if (err) {
-      console.error('Erro no cadastro:', err);
+  const selectSql = 'SELECT ID FROM Usuario WHERE Email = ? LIMIT 1';
+  db.query(selectSql, [email], (selectError, results) => {
+    if (selectError) {
+      console.error('Erro ao verificar e-mail:', selectError);
       return res.status(500).send('Erro ao cadastrar usuário.');
     }
 
-    // 201 informa ao cliente que um novo recurso foi criado.
-    res.status(201).send('Usuário cadastrado com sucesso!');
+    if (results.length > 0) {
+      return res.status(409).send('Este e-mail já está cadastrado.');
+    }
+
+    // Nunca armazena a senha em texto puro no banco de dados.
+    const hashed = bcrypt.hashSync(senha, 8);
+    const insertSql = 'INSERT INTO Usuario (Nome, Email, Senha) VALUES (?, ?, ?)';
+    db.query(insertSql, [nome, email, hashed], (insertError) => {
+      if (insertError?.code === 'ER_DUP_ENTRY') {
+        return res.status(409).send('Este e-mail já está cadastrado.');
+      }
+
+      if (insertError) {
+        console.error('Erro no cadastro:', insertError);
+        return res.status(500).send('Erro ao cadastrar usuário.');
+      }
+
+      res.status(201).send('Usuário cadastrado com sucesso!');
+    });
   });
 };
 
