@@ -30,14 +30,27 @@ Em hospedagem gratuita, a primeira chamada à API pode demorar alguns segundos e
 <details>
   <summary>Ver telas de autenticação</summary>
 
-  ### Login
+### Login
 
-  ![Tela de login do NutriFit](docs/screenshots/login.png)
+![Tela de login do NutriFit](docs/screenshots/login.png)
 
-  ### Cadastro
+### Cadastro
 
-  ![Tela de cadastro do NutriFit](docs/screenshots/cadastro.png)
+![Tela de cadastro do NutriFit](docs/screenshots/cadastro.png)
+
 </details>
+
+### Área logada e catálogo
+
+![Home com avatar e carrinho](docs/screenshots/logged-home.png)
+
+![Página de ganho de massa](docs/screenshots/category.png)
+
+### Checkout demonstrativo
+
+![Checkout com Pix selecionado](docs/screenshots/checkout-pix.png)
+
+![Checkout com boleto selecionado](docs/screenshots/checkout-boleto.png)
 
 ## Arquitetura
 
@@ -65,6 +78,7 @@ Para desenvolvimento local, o projeto também oferece MySQL 8.4 por Docker Compo
 - URL da API selecionada automaticamente entre ambiente local e produção.
 - Conexão TLS com TiDB Cloud.
 - Rodapé com ano atualizado automaticamente.
+- Checkout demonstrativo com cartão, Pix, boleto e cálculo simulado de frete.
 - Cinco testes automatizados de cadastro e autenticação.
 
 ## Tecnologias
