@@ -1,93 +1,103 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const formLogin = document.getElementById("loginForm");
-  const inputEmail = document.getElementById("email");
-  const inputSenha = document.getElementById("senha");
-  const botaoEntrar = formLogin?.querySelector('button[type="submit"]');
+// Aguarda o DOM ser totalmente carregado antes de executar o script
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtém os elementos do formulário e campos de entrada
+  let formLogin = document.getElementById("loginForm");
+  let inputEmail = document.getElementById("email");
+  let inputSenha = document.getElementById("senha");
 
-  if (!formLogin || !inputEmail || !inputSenha || !botaoEntrar) {
-    console.error("Elementos do formulário de login não encontrados.");
+  // Verifica se os elementos foram encontrados
+  if (!formLogin || !inputEmail || !inputSenha) {
+    console.error("Elementos não encontrados. Verifique os IDs.");
     return;
   }
 
-  function ocultarErro(elemento) {
-    elemento.classList.remove("error");
-    elemento.parentElement.querySelector(".required-popup")?.remove();
-  }
-
-  function mostrarErro(elemento, mensagem) {
-    ocultarErro(elemento);
-    elemento.classList.add("error");
-    const aviso = document.createElement("div");
-    aviso.className = "required-popup";
-    aviso.textContent = mensagem;
-    elemento.parentElement.appendChild(aviso);
-  }
-
-  function validarCampos() {
-    const email = inputEmail.value.trim();
-    const senha = inputSenha.value;
-    let valido = true;
-
-    ocultarErro(inputEmail);
-    ocultarErro(inputSenha);
-
-    if (!email) {
-      mostrarErro(inputEmail, "* Campo obrigatório");
-      valido = false;
-    } else if (!inputEmail.validity.valid) {
-      mostrarErro(inputEmail, "* Informe um e-mail válido");
-      valido = false;
+  // Adiciona um ouvinte de evento para o envio do formulário
+  formLogin.addEventListener("submit", function (event) {
+    // Verifica o e-mail
+    if (inputEmail.value === "") {
+      // Impede o envio do formulário se o e-mail estiver vazio
+      event.preventDefault();
+      // Adiciona classe de erro ao campo de e-mail
+      inputEmail.classList.add("error");
+      // Exibe mensagem de erro abaixo do campo de e-mail
+      showErrorMessage(inputEmail, "* Campo obrigatório");
+    } else {
+      // Remove classe de erro e mensagem se o e-mail estiver preenchido
+      inputEmail.classList.remove("error");
+      hideErrorMessage(inputEmail);
     }
 
-    if (!senha) {
-      mostrarErro(inputSenha, "* Campo obrigatório");
-      valido = false;
-    }
+    // Verifica a senha
+    if (inputSenha.value === "") {
+      // Impede o envio do formulário se a senha estiver vazia
+      event.preventDefault();
+      // Adiciona classe de erro ao campo de senha
+      inputSenha.classList.add("error");
+      // Exibe mensagem de erro abaixo do campo de senha
+      showErrorMessage(inputSenha, "* Campo obrigatório");
+    } else {
+      // Remove classe de erro e mensagem se a senha estiver preenchida
+      inputSenha.classList.remove("error");
+      hideErrorMessage(inputSenha);
 
-    return valido;
-  }
-
-  [inputEmail, inputSenha].forEach((campo) => {
-    campo.addEventListener("focus", () => {
-      campo.style.border = "2px solid #2e97a7";
-      ocultarErro(campo);
-    });
-    campo.addEventListener("blur", () => {
-      campo.style.border = "2px solid rgba(255, 255, 255, 0.2)";
-    });
-  });
-
-  formLogin.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    if (!validarCampos()) return;
-
-    botaoEntrar.disabled = true;
-    botaoEntrar.textContent = "Entrando...";
-
-    try {
-      const resposta = await fetch("http://localhost:3000/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: inputEmail.value.trim(),
-          senha: inputSenha.value,
-        }),
-      });
-      const mensagem = await resposta.text();
-
-      if (!resposta.ok) {
-        alert(mensagem || "Não foi possível realizar o login.");
-        return;
+      // Verificação de login correto
+      if (loginCorreto(inputEmail.value, inputSenha.value)) {
+        // Redireciona para index.html se o login estiver correto
+        window.location.href = "index.html";
+      } else {
+        // Exibe mensagem de erro para login incorreto
+        alert("Login incorreto. Verifique suas credenciais.");
       }
-
-      alert(mensagem);
-      window.location.href = "index2.html";
-    } catch (erro) {
-      console.error("Erro ao acessar a API de login:", erro);
-      alert("Não foi possível conectar ao servidor. Tente novamente.");
-    } finally {
-      botaoEntrar.disabled = false;
-      botaoEntrar.textContent = "Entrar";
     }
   });
+
+  // Adiciona ouvintes de eventos para o foco e desfoque dos campos de e-mail e senha
+  inputEmail.addEventListener("focus", function () {
+    // Destaca o campo de e-mail quando está em foco
+    inputEmail.style.border = "2px solid #2e97a7";
+    // Oculta mensagem de erro
+    hideErrorMessage(inputEmail);
+  });
+
+  inputEmail.addEventListener("blur", function () {
+    // Remove destaque do campo de e-mail quando perde o foco
+    inputEmail.style.border = "2px solid rgba(255, 255, 255, 0.2)";
+  });
+
+  inputSenha.addEventListener("focus", function () {
+    // Destaca o campo de senha quando está em foco
+    inputSenha.style.border = "2px solid #2e97a7";
+    // Oculta mensagem de erro
+    hideErrorMessage(inputSenha);
+  });
+
+  inputSenha.addEventListener("blur", function () {
+    // Remove destaque do campo de senha quando perde o foco
+    inputSenha.style.border = "2px solid rgba(255, 255, 255, 0.2)";
+  });
+
+  // Função para exibir mensagem de erro abaixo do campo
+  function showErrorMessage(element, message) {
+    let errorMessage = document.createElement("div");
+    errorMessage.className = "required-popup";
+    errorMessage.innerText = message;
+    // Adiciona mensagem de erro como um elemento irmão abaixo do campo
+    element.parentElement.appendChild(errorMessage);
+  }
+
+  // Função para ocultar mensagem de erro
+  function hideErrorMessage(element) {
+    // Obtém a mensagem de erro associada ao campo
+    let errorMessage = element.parentElement.querySelector(".required-popup");
+    if (errorMessage) {
+      // Remove a mensagem de erro se existir
+      errorMessage.remove();
+    }
+  }
+
+  // Função para verificar se o login é correto (simulação)
+  function loginCorreto(email, senha) {
+    // Simula uma verificação simples
+    return email === "usuario@exemplo.com" && senha === "senha123";
+  }
 });
