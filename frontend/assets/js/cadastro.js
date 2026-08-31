@@ -120,16 +120,19 @@ function validarSenha(valor, helper) {
 
 function validarConfirmaSenha(valor, helper) {
   const senhaOriginal = senhaInput.value.trim();
-  if (!valor.trim()) {
-    estilizarInputIncorreto(confirmaSenhaInput, helper, "Confirme sua senha");
-    return false;
-  }
-  if (valor !== senhaOriginal) {
-    estilizarInputIncorreto(confirmaSenhaInput, helper, "As senhas não coincidem");
-    return false;
-  }
-  estilizarInputCorreto(confirmaSenhaInput, helper);
-  return true;
+  const mensagemErroMinLength = "A senha inserida não pode estar vazia";
+  const mensagemErroRegex = "As senhas não coincidem";
+
+  return (
+    validarCampo(
+      valor,
+      /^/,
+      confirmaSenhaInput,
+      helper,
+      mensagemErroMinLength,
+      mensagemErroRegex
+    ) && valor.trim() === senhaOriginal
+  );
 }
 
 // Associa apenas campos que existem no formulário aos respectivos validadores.
@@ -172,19 +175,18 @@ adicionarValidacaoDinamica(
   validarConfirmaSenha
 );
 
-const formCadastro = document.getElementById("form-cadastro");
-const btnSubmit = formCadastro.querySelector('button[type="submit"]');
+const btnSubmit = document.querySelector('button[type="submit"]');
 
-formCadastro.addEventListener("submit", async (e) => {
+btnSubmit.addEventListener("click", async (e) => {
   e.preventDefault();
 
-  const todosValidos = [
-    validarNome(nomeInput.value, nomeHelper),
-    validarSobrenome(sobrenomeInput.value, sobrenomeHelper),
-    validarEmail(emailInput.value, emailHelper),
-    validarSenha(senhaInput.value, senhaHelper),
-    validarConfirmaSenha(confirmaSenhaInput.value, confirmaSenhaHelper),
-  ].every(Boolean);
+  let todosValidos = true;
+  for (const key in inputsCorretos) {
+    if (!inputsCorretos[key]) {
+      todosValidos = false;
+      break;
+    }
+  }
 
   if (!todosValidos) {
     alert("Os campos obrigatórios precisam ser preenchidos corretamente");
@@ -197,28 +199,16 @@ formCadastro.addEventListener("submit", async (e) => {
   const email = emailInput.value.trim();
   const senha = senhaInput.value;
 
-  const diaSelecionado = document.querySelector('select[name="dia"]').value;
-  const mesSelecionado = document.querySelector('select[name="mes"]').value;
-  const anoSelecionado = document.querySelector('select[name="ano"]').value;
-  const generoSelecionado = document.querySelector('input[name="genero"]:checked');
-
-  if (!diaSelecionado || !mesSelecionado || !anoSelecionado || !generoSelecionado) {
-    alert("Preencha a data de nascimento e selecione uma opção de gênero");
-    return;
-  }
-
-  const dia = diaSelecionado.replace("dia-", "");
-  const mes = mesSelecionado.replace("mes-", "");
-  const ano = anoSelecionado.replace("ano-", "");
+  const dia = document.querySelector('select[name="dia"]').value.replace('dia-', '');
+  const mes = document.querySelector('select[name="mes"]').value.replace('mes-', '');
+  const ano = document.querySelector('select[name="ano"]').value.replace('ano-', '');
   const data_nascimento = `${ano}-${mes.padStart(2, '0')}-${dia.padStart(2, '0')}`;
 
-  const genero = generoSelecionado.value;
+  const genero = document.querySelector('input[name="genero"]:checked')?.parentElement.innerText.trim();
 
   const dados = { nome, sobrenome, email, senha, data_nascimento, genero };
 
   try {
-    btnSubmit.disabled = true;
-    btnSubmit.textContent = "Criando conta...";
     const resposta = await fetch(`${window.NUTRIFT_API_URL}/api/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -232,8 +222,5 @@ formCadastro.addEventListener("submit", async (e) => {
   } catch (erro) {
     console.error('Erro ao cadastrar:', erro);
     alert('Erro ao cadastrar. Tente novamente.');
-  } finally {
-    btnSubmit.disabled = false;
-    btnSubmit.innerHTML = 'Criar minha conta <span class="material-symbols-rounded">arrow_forward</span>';
   }
 });
