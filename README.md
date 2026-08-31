@@ -26,8 +26,6 @@ Neste projeto, utilizamos as seguintes tecnologias:
 
 - SQL
 
-- Node.js
-
   
 
 ## Layouts de Telas Responsivos para E-commerce
@@ -53,9 +51,6 @@ Neste projeto, utilizamos as seguintes tecnologias:
    - Uma página para os usuários se cadastrarem na plataforma.
    - Campos para informações de cadastro, como nome, e-mail, senha, etc.
 
-## Segue o link do Site pronto
-Nutrifit - https://projeto-integrador-lilac.vercel.app/cadastro.html?nome=&sobrenome=&email=&senha=&confirmar-senha=&Dia=dia-0&mes=valor-0&ano=valor-0
-
 ## Como Usar
 
 Se desejar testar ou contribuir com o projeto, siga estas etapas:
@@ -66,34 +61,17 @@ git clone https://github.com/Jlucaas95/Projeto_Integrador.git
 
 
 
-2. Entre na pasta do backend e instale as dependências:
+2. Instale as dependências necessárias, se aplicável.
 
-   ```bash
-   cd backend
-   npm install
-   ```
+   
 
-3. Configure as variáveis `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` e,
-   opcionalmente, `DB_PORT` em um arquivo `backend/.env`.
+3. Execute o projeto com o seguinte comando:
 
-4. Inicie a API Node.js (disponível em `http://localhost:3000`):
+comando de execução (por exemplo, npm start, python app.py, etc.)
 
-   ```bash
-   npm start
-   ```
 
-5. Abra um dos arquivos HTML da pasta `frontend` no navegador.
 
-## Testes
-
-Na pasta `backend`, execute a suíte automatizada com:
-
-```bash
-npm test
-```
-
-Os testes usam uma conexão de banco simulada, portanto não alteram os dados do
-MySQL configurado no arquivo `.env`.
+4. Abra o projeto em seu navegador ou ambiente de desenvolvimento local.
 
 ## Contribuições
 
