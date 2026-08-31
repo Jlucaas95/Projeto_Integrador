@@ -4,22 +4,18 @@ const mysql = require('mysql2');
 require('dotenv').config();
 
 // Cria a conexão com base nos dados do .env
-const useSsl = process.env.DB_SSL === 'true';
-
-const connection = mysql.createPool({
+const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: Number(process.env.DB_PORT) || 3306,
-  waitForConnections: true,
-  connectionLimit: 10,
-  ssl: useSsl
-    ? {
-        minVersion: 'TLSv1.2',
-        rejectUnauthorized: true,
-      }
-    : undefined,
+  port: process.env.DB_PORT || 3306
+});
+
+// Tenta conectar e mostra uma mensagem de sucesso ou erro
+connection.connect((err) => {
+  if (err) throw err;
+  console.log('✅ Banco de dados conectado com sucesso!');
 });
 
 // Exporta a conexão para ser usada em outros arquivos

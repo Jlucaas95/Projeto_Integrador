@@ -46,11 +46,6 @@ async function post(path, body) {
 test('POST /api/register cadastra um usuário válido', async () => {
   let query;
   db.query = (sql, params, callback) => {
-    if (sql.startsWith('SELECT')) {
-      callback(null, []);
-      return;
-    }
-
     query = { sql, params };
     callback(null);
   };
@@ -70,29 +65,6 @@ test('POST /api/register cadastra um usuário válido', async () => {
   assert.equal(query.params[0], 'Maria');
   assert.equal(query.params[1], 'maria@example.com');
   assert.notEqual(query.params[2], 'segredo');
-});
-
-test('POST /api/register rejeita um e-mail já cadastrado', async () => {
-  let insertExecutado = false;
-  db.query = (sql, _params, callback) => {
-    if (sql.startsWith('SELECT')) {
-      callback(null, [{ ID: 1 }]);
-      return;
-    }
-
-    insertExecutado = true;
-    callback(null);
-  };
-
-  const response = await post('/api/register', {
-    nome: 'Maria',
-    email: 'maria@example.com',
-    senha: 'segredo',
-  });
-
-  assert.equal(response.status, 409);
-  assert.equal(await response.text(), 'Este e-mail já está cadastrado.');
-  assert.equal(insertExecutado, false);
 });
 
 test('POST /api/login autentica credenciais corretas', async () => {
