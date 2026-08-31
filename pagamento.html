@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagamento</title>
+  <link rel="stylesheet" href="./assets/css/pagamento.css" />
+  <script src="./assets/js/pagamento.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Página de Pagamento</h1>
+  </header>
+
+  <main>
+    <section id="detalhes-pagamento">
+      <h2>Detalhes do Pagamento</h2>
+      <!-- Adicione aqui os campos para detalhes do pagamento, como cartão de crédito, endereço, etc. -->
+      <label for="numero-cartao">Número do Cartão:</label>
+      <input
+        type="text"
+        id="numero-cartao"
+        name="numero-cartao"
+        placeholder="**** **** **** ****"
+        required
+      />
+
+      <label for="nome-titular">Nome do Titular:</label>
+      <input type="text" id="nome-titular" name="nome-titular" required />
+
+      <label for="data-expiracao">Data de Expiração:</label>
+      <input
+        type="text"
+        id="data-expiracao"
+        name="data-expiracao"
+        placeholder="MM/AA"
+        required
+      />
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" placeholder="***" required />
+    </section>
+
+    <section id="detalhes-envio">
+      <h2>Detalhes de Envio</h2>
+      <!-- Adicione aqui os campos para detalhes de envio, como endereço, cidade, etc. -->
+  <label for="endereco">Endereço:</label>
+  <input type="text" id="endereco" name="endereco" required />
+
+  <label for="cidade">Cidade:</label>
+  <input type="text" id="cidade" name="cidade" required />
+
+  <label for="cp">Código Postal (CP):</label>
+  <input type="text" id="cp" name="cp" required />
+
+  <label for="estado">Estado:</label>
+  <input type="text" id="estado" name="estado" required />
+
+  <!-- Adicione mais campos conforme necessário -->
+
+    </section>
+
+    <section id="resumo-pedido">
+      <h2>Resumo do Pedido</h2>
+      <!-- Adicione aqui um resumo do pedido, mostrando os itens selecionados, quantidades e total a pagar -->
+      <div class="item-pedido">
+        <span>Produto 1</span>
+        <span>Quantidade: 2</span>
+        <span>Total: R$ 50.00</span>
+      </div>
+
+      <div class="item-pedido">
+        <span>Produto 2</span>
+        <span>Quantidade: 1</span>
+        <span>Total: R$ 30.00</span>
+      </div>
+
+      <div id="total-pagar">
+        <span>Total a Pagar: R$ 80.00</span>
+      </div>
+
+      <button id="botao-pagar">Pagar</button>
+    </section>
+
+    <section id="metodos-pagamento">
+      <h2>Métodos de Pagamento</h2>
+      <!-- Adicione aqui opções de métodos de pagamento, como cartão de crédito, boleto, etc. -->
+      <label for="metodo-cartao">
+        <input
+          type="radio"
+          id="metodo-cartao"
+          name="metodo-pagamento"
+          checked
+        />
+        Cartão de Crédito
+      </label>
+
+      <label for="metodo-boleto">
+        <input type="radio" id="metodo-boleto" name="metodo-pagamento" />
+        Boleto Bancário
+      </label>
+
+      <label for="metodo-pix">
+        <input type="radio" id="metodo-pix" name="metodo-pix" />
+        Pix
+      </label>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-contact">
+        <p>Atendimento <a href="tel:(xx)xxxx-xxxx">(xx) xxxx-xxxx</a></p>
+        <p>
+          Email <a href="mailto:email@exemplo.com">NutriFit@comercial.com</a>
+        </p>
+      </div>
+
+      <div class="footer-shortcuts">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contato.html">Fale conosco</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social-icons">
+        <a href="https://www.facebook.com/NutriFitOficial" target="_blank">
+          <img
+            src="img/icon/facebook-logo.png"
+            alt="Facebook"
+            width="32"
+            height="32"
+          />
+        </a>
+        <a href="https://www.instagram.com/nutrifit.oficial/" target="_blank">
+          <img
+            src="img/icon/instagram.png"
+            alt="Instagram"
+            width="32"
+            height="32"
+          />
+        </a>
+      </div>
+    </div>
+    <p>© 2023 NutriFit</p>
+  </footer>
+</body>
+</html>
